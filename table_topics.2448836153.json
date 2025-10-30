@@ -1,0 +1,4468 @@
+{
+	"orderInfo": [
+		{
+			"index": 1,
+			"asc": false,
+			"field": "topics.id_topics"
+		}
+	],
+	"sql": "SELECT\ntopics.id_topics,\ntopics.cateories_id,\ntopics.topic,\ntopics.question,\ntopics.creationUser,\ntopics.creationDate,\ncateories.id_cateories, cateories.name, cateories.color,\nuser.id_user, user.login, user.displayName, user.image,\nC.countReplies, LastUpdateDate,\nsuscriptions.id_suscriptions,\nV.countView\nFROM topics topics\njoin cateories on (topics.cateories_id = cateories.id_cateories)\njoin user on (topics.creationUser = user.id_user)\n\nleft join (\nselect topics_id, count(*) countReplies, max(LastUpdateDate) LastUpdateDate from replies\ngroup by topics_id ) C on (C.topics_id = topics.id_topics)\n\nleft join (\nselect topics_id, count(*) countView from log_seen\ngroup by topics_id ) V on (V.topics_id = topics.id_topics)\n\nleft join suscriptions on ( suscriptions.topics_id = topics.id_topics and suscriptions.user_id =  ':user.id_user')\n\norder by topics.id_topics desc",
+	"connId": "forum_at_localhost",
+	"originalTable": "topics",
+	"name": "topics",
+	"shortTableName": "topics",
+	"caseSensitiveSearch": "",
+	"clickActions": {
+		"row": {
+			"action": "code",
+			"codeData": {
+				"snippet": 1407105872
+			},
+			"gridData": {
+				"action": "checkbox",
+				"table": "replies",
+				"tableGid": 2684380970
+			},
+			"openData": {
+				"how": "goto",
+				"page": "details",
+				"table": "replies",
+				"url": "",
+				"tableGid": 2684380970
+			}
+		},
+		"fields": {
+			"cateories_id": {
+				"codeData": {
+					"snippet": null
+				},
+				"gridData": {},
+				"openData": {}
+			},
+			"color": {
+				"codeData": {
+					"snippet": null
+				},
+				"gridData": {},
+				"openData": {}
+			},
+			"creationDate": {
+				"codeData": {
+					"snippet": null
+				},
+				"gridData": {},
+				"openData": {}
+			},
+			"creationUser": {
+				"codeData": {
+					"snippet": null
+				},
+				"gridData": {},
+				"openData": {}
+			},
+			"displayName": {
+				"codeData": {
+					"snippet": null
+				},
+				"gridData": {},
+				"openData": {}
+			},
+			"id_cateories": {
+				"codeData": {
+					"snippet": null
+				},
+				"gridData": {},
+				"openData": {}
+			},
+			"id_topics": {
+				"codeData": {
+					"snippet": null
+				},
+				"gridData": {},
+				"openData": {}
+			},
+			"id_user": {
+				"codeData": {
+					"snippet": null
+				},
+				"gridData": {},
+				"openData": {}
+			},
+			"image": {
+				"codeData": {
+					"snippet": null
+				},
+				"gridData": {},
+				"openData": {}
+			},
+			"login": {
+				"codeData": {
+					"snippet": null
+				},
+				"gridData": {},
+				"openData": {}
+			},
+			"name": {
+				"codeData": {
+					"snippet": null
+				},
+				"gridData": {},
+				"openData": {}
+			},
+			"question": {
+				"codeData": {
+					"snippet": null
+				},
+				"gridData": {},
+				"openData": {}
+			},
+			"topic": {
+				"codeData": {
+					"snippet": null
+				},
+				"gridData": {},
+				"openData": {}
+			}
+		}
+	},
+	"pageSizeRecords": 10,
+	"pageSizeSelectorRecords": [
+		"5",
+		"10",
+		"20",
+		"30",
+		"50",
+		"100",
+		"500",
+		"-1"
+	],
+	"pageSizeSelectorGroups": [
+		"1",
+		"3",
+		"5",
+		"10",
+		"50",
+		"100",
+		"-1"
+	],
+	"keyFields": [
+		"id_topics"
+	],
+	"detailsBadgeColor": "6493EA",
+	"detailsTables": [
+		2684380970
+	],
+	"fields": [
+		{
+			"name": "id_topics",
+			"sqlExpression": "topics.id_topics",
+			"strField": "id_topics",
+			"type": 3,
+			"autoinc": true,
+			"viewFormats": [
+				{
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"required": true,
+					"validateAs": "Number",
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"denyDuplicateMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Id."
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "topics"
+		},
+		{
+			"name": "cateories_id",
+			"sqlExpression": "topics.cateories_id",
+			"strField": "cateories_id",
+			"type": 3,
+			"viewFormats": [
+				{
+					"format": "Custom",
+					"customExpression": "$color = $data['color'];\n$value = <<<EOT\n<div  style=\"background-color: $color;width: 15px ; height: 15px;  border: 1px solid #DDDDDD ;border-radius:3px;\"> \n<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$value</span> </div>\nEOT;",
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"format": "Lookup wizard",
+					"required": true,
+					"validateAs": "Number",
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"denyDuplicateMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"lookupType": 2,
+					"lookupTable": "cateories",
+					"lookupTableConnection": "forum_at_localhost",
+					"lookupLinkField": "id_cateories",
+					"lookupDisplayField": "name",
+					"lookupOrderBy": "name",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list",
+				"filterTotalsField": "id_topics"
+			},
+			"googleDrivePublicAccess": "",
+			"label": {
+				"English": "Cateories"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "topics"
+		},
+		{
+			"name": "topic",
+			"sqlExpression": "topics.topic",
+			"strField": "topic",
+			"type": 200,
+			"viewFormats": [
+				{
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0,
+					"textShowFirst": false
+				}
+			],
+			"editFormats": [
+				{
+					"required": true,
+					"textboxMaxLenth": 200,
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Topic"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "topics"
+		},
+		{
+			"name": "question",
+			"sqlExpression": "topics.question",
+			"strField": "question",
+			"type": 201,
+			"viewFormats": [
+				{
+					"format": "HTML",
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0,
+					"textShowFirst": false
+				}
+			],
+			"editFormats": [
+				{
+					"format": "Text area",
+					"required": true,
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"textareaHeight": 450,
+					"textareaRTE": true,
+					"fileResizeSize": 1920,
+					"fileCreateThumbnail": true,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Question"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "topics"
+		},
+		{
+			"name": "creationUser",
+			"sqlExpression": "topics.creationUser",
+			"strField": "creationUser",
+			"type": 3,
+			"viewFormats": [
+				{
+					"format": "Custom",
+					"customExpression": "// get information about uploaded files\n$fileArray = my_json_decode($data[\"image\"]);\n$images = '';\nif (count($fileArray) <> 0) { // There are images\n    $filename = $fileArray[0]['name'];\n    $parts = explode(\"/\", $filename);\n    $filename = $_SESSION['PREF_LINK'].$parts[(count($parts)-1)];\n    $images = '<img src=\"'.$filename.'\" class=\"img-circle\" alt=\"image\" width=\"50\" height=\"50\">';\n}\n\n$value = <<<EOT\n<div> $images <span>&nbsp;&nbsp;$value</span> </div>\nEOT;",
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"format": "Lookup wizard",
+					"required": true,
+					"defaultValue": "$_SESSION['id_user']",
+					"validateAs": "Number",
+					"textHTML5Input": "0",
+					"lookupType": 2,
+					"lookupTable": "user",
+					"lookupTableConnection": "forum_at_localhost",
+					"lookupLinkField": "id_user",
+					"lookupDisplayField": "displayName",
+					"lookupOrderBy": "displayName",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"label": {
+				"English": "Author"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "topics"
+		},
+		{
+			"name": "creationDate",
+			"sqlExpression": "topics.creationDate",
+			"strField": "creationDate",
+			"googleLikeSearch": false,
+			"type": 135,
+			"viewFormats": [
+				{
+					"format": "Short Date",
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"format": "Readonly",
+					"required": true,
+					"defaultValue": "now()",
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"dateEditType": 5,
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"label": {
+				"English": "Creation Date"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "topics"
+		},
+		{
+			"name": "id_cateories",
+			"sqlExpression": "cateories.id_cateories",
+			"strField": "id_cateories",
+			"googleLikeSearch": false,
+			"type": 3,
+			"autoinc": true,
+			"viewFormats": [
+				{
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"required": true,
+					"validateAs": "Number",
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"denyDuplicateMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Id Cateories"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "cateories"
+		},
+		{
+			"name": "name",
+			"sqlExpression": "cateories.name",
+			"strField": "name",
+			"googleLikeSearch": false,
+			"type": 200,
+			"viewFormats": [
+				{
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"denyDuplicateMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Name"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "cateories"
+		},
+		{
+			"name": "color",
+			"sqlExpression": "cateories.color",
+			"strField": "color",
+			"googleLikeSearch": false,
+			"type": 200,
+			"viewFormats": [
+				{
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"denyDuplicateMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Color"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "cateories"
+		},
+		{
+			"name": "id_user",
+			"sqlExpression": "user.id_user",
+			"strField": "id_user",
+			"googleLikeSearch": false,
+			"type": 3,
+			"autoinc": true,
+			"viewFormats": [
+				{
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"required": true,
+					"validateAs": "Number",
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"denyDuplicateMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Id User"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "user"
+		},
+		{
+			"name": "login",
+			"sqlExpression": "user.login",
+			"strField": "login",
+			"googleLikeSearch": false,
+			"type": 200,
+			"viewFormats": [
+				{
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"denyDuplicateMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Login"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "user"
+		},
+		{
+			"name": "displayName",
+			"sqlExpression": "user.displayName",
+			"strField": "displayName",
+			"googleLikeSearch": false,
+			"type": 200,
+			"viewFormats": [
+				{
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"denyDuplicateMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Display Name"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "user"
+		},
+		{
+			"name": "image",
+			"sqlExpression": "user.image",
+			"strField": "image",
+			"googleLikeSearch": false,
+			"type": 200,
+			"viewFormats": [
+				{
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"denyDuplicateMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Image"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "user"
+		},
+		{
+			"name": "countReplies",
+			"sqlExpression": "C.countReplies",
+			"strField": "countReplies",
+			"type": 3,
+			"viewFormats": [
+				{
+					"format": "Number",
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"required": true,
+					"validateAs": "Number",
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"denyDuplicateMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Replies"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": ""
+		},
+		{
+			"name": "LastUpdateDate",
+			"sqlExpression": "LastUpdateDate",
+			"strField": "LastUpdateDate",
+			"type": 135,
+			"viewFormats": [
+				{
+					"format": "Datetime",
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"format": "Date",
+					"required": true,
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"denyDuplicateMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"dateEditType": 13,
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"label": {
+				"English": "Last reply"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": ""
+		},
+		{
+			"name": "id_suscriptions",
+			"sqlExpression": "suscriptions.id_suscriptions",
+			"strField": "id_suscriptions",
+			"type": 3,
+			"autoinc": true,
+			"viewFormats": [
+				{
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"required": true,
+					"validateAs": "Number",
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"denyDuplicateMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Id Suscriptions"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": "suscriptions"
+		},
+		{
+			"name": "countView",
+			"sqlExpression": "V.countView",
+			"strField": "countView",
+			"type": 3,
+			"viewFormats": [
+				{
+					"format": "Number",
+					"fileShowPdf": "",
+					"videoRewindEnabled": false,
+					"numberFractionalDigits": 0
+				}
+			],
+			"editFormats": [
+				{
+					"required": true,
+					"validateAs": "Number",
+					"validateRegexMessage": {
+						"text": "",
+						"type": 0
+					},
+					"denyDuplicateMessage": {
+						"text": "",
+						"type": 0
+					},
+					"textHTML5Input": "0",
+					"fileMaxNumber": 1,
+					"fileThumbnailField": "th",
+					"timeConvention": 1
+				}
+			],
+			"filterFormat": {
+				"format": "Values list"
+			},
+			"googleDrivePublicAccess": "",
+			"defaultSearchOption": "Contains",
+			"label": {
+				"English": "Views"
+			},
+			"tooltip": {
+				"English": ""
+			},
+			"placeholder": {
+				"English": ""
+			},
+			"tableName": ""
+		}
+	],
+	"warnLeavingEdit": true,
+	"afterEditAction": 0,
+	"afterEditDetails": 8,
+	"afterAddAction": 0,
+	"afterAddDetail": 8,
+	"whereTabs": [
+		{
+			"title": {
+				"text": "All topìcs",
+				"type": 0
+			},
+			"id": "All_topics",
+			"showCount": true
+		},
+		{
+			"title": {
+				"text": "My topics",
+				"type": 0
+			},
+			"where": "creationUser = ':user.id_user'",
+			"id": "My_topics",
+			"showCount": true,
+			"hideEmpty": true
+		},
+		{
+			"title": {
+				"text": "Subcriptions",
+				"type": 0
+			},
+			"where": "suscriptions.id_suscriptions is not null",
+			"id": "Subcriptions",
+			"showCount": true,
+			"hideEmpty": true
+		}
+	],
+	"queryContext": {
+		"user.id_user": "1"
+	},
+	"eventHandlers": [
+		{
+			"eventId": "EVENT_JS_ONLOAD",
+			"pageType": "add",
+			"code": "var ctrlrol = Runner.getControl(pageid, 'creationUser');\nctrlrol.makeReadonly();"
+		},
+		{
+			"eventId": "EVENT_BEFOREADD",
+			"pageType": "add",
+			"code": "$values['creationUser'] = $_SESSION[\"id_user\"];\n$values['creationDate'] = now();\n\n\nreturn true;"
+		},
+		{
+			"eventId": "EVENT_BEFOREEDIT",
+			"pageType": "edit",
+			"code": "return true;"
+		},
+		{
+			"eventId": "EVENT_RECORD_EDITABLE",
+			"code": "$isEditable=false;\nif ($values['creationUser'] == $_SESSION[\"id_user\"]) { // Es el usuario que los creó\n\t\t$isEditable = true;\n}\nif (Security::isAdmin() ) { // Es Administrator\n\t\t$isEditable = true;\n}\t\t\nreturn $isEditable;"
+		}
+	],
+	"sortByFields": {
+		"sortOrder": []
+	},
+	"pages": [
+		{
+			"id": "add",
+			"type": "add",
+			"layoutId": "topbar",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "topbar-edit",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								},
+								{
+									"cell": "c3"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"logo"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"menu"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c3": {
+							"model": "c3",
+							"items": [
+								"loginform_login",
+								"username_button"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "add-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"add_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "add-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"add_message"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "add-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"add_save",
+								"add_back_list",
+								"add_cancel"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-edit",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c4"
+								},
+								{
+									"cell": "c2"
+								},
+								{
+									"cell": "c"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c5"
+								},
+								{
+									"cell": "c3"
+								},
+								{
+									"cell": "c6"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c7"
+								},
+								{
+									"cell": "c8"
+								},
+								{
+									"cell": "c9"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c4": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field5"
+							],
+							"field": "cateories_id"
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field"
+							],
+							"field": "cateories_id"
+						},
+						"c": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field6"
+							],
+							"field": "cateories_id"
+						},
+						"c5": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field7"
+							],
+							"field": "topic"
+						},
+						"c3": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field1"
+							],
+							"field": "topic"
+						},
+						"c6": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field8"
+							],
+							"field": "topic"
+						},
+						"c7": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field9"
+							],
+							"field": "question"
+						},
+						"c8": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field2"
+							],
+							"field": "question"
+						},
+						"c9": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field10"
+							],
+							"field": "question"
+						}
+					},
+					"deferredItems": [],
+					"columnCount": 1,
+					"inlineLabels": true,
+					"separateLabels": true
+				}
+			},
+			"items": {
+				"add_header": {
+					"type": "add_header"
+				},
+				"add_message": {
+					"type": "add_message"
+				},
+				"add_save": {
+					"type": "add_save"
+				},
+				"add_back_list": {
+					"type": "add_back_list"
+				},
+				"add_cancel": {
+					"type": "add_cancel"
+				},
+				"integrated_edit_field": {
+					"field": "cateories_id",
+					"type": "edit_field"
+				},
+				"integrated_edit_field1": {
+					"field": "topic",
+					"type": "edit_field"
+				},
+				"integrated_edit_field2": {
+					"field": "question",
+					"type": "edit_field"
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"logout_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"integrated_edit_field5": {
+					"type": "edit_field_label",
+					"field": "cateories_id"
+				},
+				"integrated_edit_field6": {
+					"type": "edit_field_tooltip",
+					"field": "cateories_id"
+				},
+				"integrated_edit_field7": {
+					"type": "edit_field_label",
+					"field": "topic"
+				},
+				"integrated_edit_field8": {
+					"type": "edit_field_tooltip",
+					"field": "topic"
+				},
+				"integrated_edit_field9": {
+					"type": "edit_field_label",
+					"field": "question"
+				},
+				"integrated_edit_field10": {
+					"type": "edit_field_tooltip",
+					"field": "question"
+				}
+			},
+			"version": 4,
+			"pageWidth": "full",
+			"fixedTopbar": true,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "edit",
+			"type": "edit",
+			"layoutId": "topbar",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "topbar-edit",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								},
+								{
+									"cell": "c3"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"logo"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"menu"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c3": {
+							"model": "c3",
+							"items": [
+								"loginform_login",
+								"username_button"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "edit-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"edit_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "edit-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"edit_message"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "edit-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"edit_save",
+								"edit_back_list",
+								"edit_close"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"hamburger"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-edit",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c4"
+								},
+								{
+									"cell": "c2"
+								},
+								{
+									"cell": "c"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c5"
+								},
+								{
+									"cell": "c3"
+								},
+								{
+									"cell": "c6"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c7"
+								},
+								{
+									"cell": "c8"
+								},
+								{
+									"cell": "c9"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c4": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field3"
+							],
+							"field": "cateories_id"
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field"
+							],
+							"field": "cateories_id"
+						},
+						"c": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field5"
+							],
+							"field": "cateories_id"
+						},
+						"c5": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field6"
+							],
+							"field": "topic"
+						},
+						"c3": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field1"
+							],
+							"field": "topic"
+						},
+						"c6": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field7"
+							],
+							"field": "topic"
+						},
+						"c7": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field8"
+							],
+							"field": "question"
+						},
+						"c8": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field2"
+							],
+							"field": "question"
+						},
+						"c9": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field9"
+							],
+							"field": "question"
+						}
+					},
+					"deferredItems": [],
+					"columnCount": 1,
+					"inlineLabels": true,
+					"separateLabels": true
+				}
+			},
+			"items": {
+				"edit_header": {
+					"type": "edit_header"
+				},
+				"edit_message": {
+					"type": "edit_message"
+				},
+				"edit_save": {
+					"type": "edit_save"
+				},
+				"edit_back_list": {
+					"type": "edit_back_list"
+				},
+				"edit_close": {
+					"type": "edit_close"
+				},
+				"hamburger": {
+					"type": "hamburger",
+					"items": [
+						"edit_reset",
+						"edit_view"
+					]
+				},
+				"edit_reset": {
+					"type": "edit_reset"
+				},
+				"edit_view": {
+					"type": "edit_view"
+				},
+				"integrated_edit_field": {
+					"field": "cateories_id",
+					"type": "edit_field",
+					"updateOnEdit": false
+				},
+				"integrated_edit_field1": {
+					"field": "topic",
+					"type": "edit_field",
+					"updateOnEdit": false
+				},
+				"integrated_edit_field2": {
+					"field": "question",
+					"type": "edit_field",
+					"updateOnEdit": false
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"logout_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"integrated_edit_field3": {
+					"type": "edit_field_label",
+					"field": "cateories_id"
+				},
+				"integrated_edit_field5": {
+					"type": "edit_field_tooltip",
+					"field": "cateories_id"
+				},
+				"integrated_edit_field6": {
+					"type": "edit_field_label",
+					"field": "topic"
+				},
+				"integrated_edit_field7": {
+					"type": "edit_field_tooltip",
+					"field": "topic"
+				},
+				"integrated_edit_field8": {
+					"type": "edit_field_label",
+					"field": "question"
+				},
+				"integrated_edit_field9": {
+					"type": "edit_field_tooltip",
+					"field": "question"
+				}
+			},
+			"version": 4,
+			"pageWidth": "full",
+			"fixedTopbar": true,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "export",
+			"type": "export",
+			"layoutId": "first",
+			"disabled": 1,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "export-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"export_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "export-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"export_field",
+								"export_field1",
+								"export_field2",
+								"export_field3",
+								"export_field4",
+								"export_field5"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"footer": {
+					"modelId": "export-footer",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"export_export",
+								"export_cancel"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"export_header": {
+					"type": "export_header"
+				},
+				"export_export": {
+					"type": "export_export"
+				},
+				"export_cancel": {
+					"type": "export_cancel"
+				},
+				"export_field": {
+					"field": "id_topics",
+					"type": "export_field"
+				},
+				"export_field1": {
+					"field": "cateories_id",
+					"type": "export_field"
+				},
+				"export_field2": {
+					"field": "topic",
+					"type": "export_field"
+				},
+				"export_field3": {
+					"field": "question",
+					"type": "export_field"
+				},
+				"export_field4": {
+					"field": "creationUser",
+					"type": "export_field"
+				},
+				"export_field5": {
+					"field": "creationDate",
+					"type": "export_field"
+				}
+			},
+			"version": 4,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {},
+			"exportFormat": 2,
+			"exportDelimiter": ",",
+			"exportSelectDelimiter": false,
+			"exportSelectFields": false
+		},
+		{
+			"id": "import",
+			"type": "import",
+			"layoutId": "first",
+			"disabled": 1,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "import-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"import_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "import-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"import_field",
+								"import_field1",
+								"import_field2",
+								"import_field3",
+								"import_field4",
+								"import_field5"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"import_header": {
+					"type": "import_header"
+				},
+				"import_field": {
+					"field": "id_topics",
+					"type": "import_field"
+				},
+				"import_field1": {
+					"field": "cateories_id",
+					"type": "import_field"
+				},
+				"import_field2": {
+					"field": "topic",
+					"type": "import_field"
+				},
+				"import_field3": {
+					"field": "question",
+					"type": "import_field"
+				},
+				"import_field4": {
+					"field": "creationUser",
+					"type": "import_field"
+				},
+				"import_field5": {
+					"field": "creationDate",
+					"type": "import_field"
+				}
+			},
+			"version": 4,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "list",
+			"type": "list",
+			"layoutId": "topbar",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "topbar-menu",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"logo",
+								"menu"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"simple_search",
+								"list_options",
+								"loginform_login",
+								"username_button"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"left": {
+					"modelId": "list-vbar",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"search_panel"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"filter_panel"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "list-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c3"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c3": {
+							"model": "c3",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "list-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"add",
+								"delete",
+								"custom_button",
+								"custom_button1"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"details_found",
+								"page_size",
+								"print_panel"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "list-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"pagination"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "horizontal-grid",
+					"grid": [
+						{
+							"section": "head",
+							"cells": [
+								{
+									"cell": "headcell_icons"
+								},
+								{
+									"cell": "headcell_checkbox"
+								},
+								{
+									"cell": "headcell_field"
+								},
+								{
+									"cell": "headcell_field1"
+								},
+								{
+									"cell": "headcell_field2"
+								},
+								{
+									"cell": "headcell_field3"
+								},
+								{
+									"cell": "headcell_field6"
+								},
+								{
+									"cell": "headcell_field4"
+								}
+							]
+						},
+						{
+							"section": "body",
+							"cells": [
+								{
+									"cell": "cell_icons"
+								},
+								{
+									"cell": "cell_checkbox"
+								},
+								{
+									"cell": "cell_field"
+								},
+								{
+									"cell": "cell_field1"
+								},
+								{
+									"cell": "cell_field2"
+								},
+								{
+									"cell": "cell_field3"
+								},
+								{
+									"cell": "cell_field6"
+								},
+								{
+									"cell": "cell_field4"
+								}
+							]
+						},
+						{
+							"cells": [
+								{
+									"cell": "cell_dpreview",
+									"colspan": 8
+								}
+							],
+							"section": "body"
+						},
+						{
+							"section": "foot",
+							"cells": [
+								{
+									"cell": "footcell_icons"
+								},
+								{
+									"cell": "footcell_checkbox"
+								},
+								{
+									"cell": "footcell_field"
+								},
+								{
+									"cell": "footcell_field1"
+								},
+								{
+									"cell": "footcell_field2"
+								},
+								{
+									"cell": "footcell_field3",
+									"colspan": 2
+								},
+								{
+									"cell": "footcell_field4"
+								}
+							]
+						}
+					],
+					"cells": {
+						"headcell_field": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field"
+							],
+							"field": "cateories_id",
+							"columnName": "field",
+							"width": "150px"
+						},
+						"cell_field": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field1"
+							],
+							"field": "cateories_id",
+							"columnName": "field",
+							"width": "150px"
+						},
+						"footcell_field": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "cateories_id",
+							"columnName": "field"
+						},
+						"headcell_field1": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field3"
+							],
+							"field": "topic",
+							"columnName": "field"
+						},
+						"cell_field1": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field2"
+							],
+							"field": "topic",
+							"columnName": "field"
+						},
+						"footcell_field1": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "topic",
+							"columnName": "field"
+						},
+						"headcell_field2": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field5"
+							],
+							"field": "creationUser",
+							"columnName": "field"
+						},
+						"cell_field2": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field4"
+							],
+							"field": "creationUser",
+							"columnName": "field"
+						},
+						"footcell_field2": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "creationUser",
+							"columnName": "field"
+						},
+						"headcell_icons": {
+							"model": "headcell_icons",
+							"items": [],
+							"columnName": "edit",
+							"field": ""
+						},
+						"cell_icons": {
+							"model": "cell_icons",
+							"items": [
+								"grid_edit"
+							],
+							"columnName": "edit",
+							"field": ""
+						},
+						"footcell_icons": {
+							"model": "footcell_icons",
+							"items": [],
+							"columnName": "edit",
+							"field": ""
+						},
+						"headcell_checkbox": {
+							"model": "headcell_checkbox",
+							"items": [
+								"grid_checkbox_head"
+							],
+							"columnName": "checkbox",
+							"field": ""
+						},
+						"cell_checkbox": {
+							"model": "cell_checkbox",
+							"items": [
+								"grid_checkbox"
+							],
+							"columnName": "checkbox",
+							"field": ""
+						},
+						"footcell_checkbox": {
+							"model": "footcell_checkbox",
+							"items": [],
+							"columnName": "checkbox",
+							"field": ""
+						},
+						"cell_dpreview": {
+							"model": "cell_dpreview",
+							"items": [
+								"details_preview"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0,
+							"columnName": "field",
+							"field": "LastUpdateDate"
+						},
+						"headcell_field3": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field_label2"
+							],
+							"field": "",
+							"columnName": ""
+						},
+						"cell_field3": {
+							"model": "cell_field",
+							"items": [
+								"grid_field2"
+							],
+							"field": "",
+							"columnName": ""
+						},
+						"footcell_field3": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "",
+							"columnName": ""
+						},
+						"headcell_field4": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field_label1"
+							],
+							"field": "LastUpdateDate",
+							"columnName": "field"
+						},
+						"cell_field4": {
+							"model": "cell_field",
+							"items": [
+								"grid_field1"
+							],
+							"field": "LastUpdateDate",
+							"columnName": "field"
+						},
+						"footcell_field4": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "LastUpdateDate",
+							"columnName": "field"
+						},
+						"headcell_field6": {
+							"model": "headcell_field",
+							"items": [
+								"grid_field_label"
+							],
+							"field": "",
+							"columnName": ""
+						},
+						"cell_field6": {
+							"model": "cell_field",
+							"items": [
+								"grid_field"
+							],
+							"field": "",
+							"columnName": ""
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"add": {
+					"type": "add"
+				},
+				"delete": {
+					"type": "delete"
+				},
+				"details_found": {
+					"type": "details_found"
+				},
+				"page_size": {
+					"type": "page_size"
+				},
+				"pagination": {
+					"type": "pagination"
+				},
+				"simple_grid_field1": {
+					"field": "cateories_id",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field2": {
+					"field": "topic",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field4": {
+					"field": "creationUser",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false,
+					"nowrap": false
+				},
+				"grid_edit": {
+					"type": "grid_edit",
+					"label": {
+						"text": "Edit",
+						"type": 0
+					},
+					"buttonStyle": "primary",
+					"page": "",
+					"buttonSize": "small"
+				},
+				"grid_checkbox": {
+					"type": "grid_checkbox"
+				},
+				"grid_checkbox_head": {
+					"type": "grid_checkbox_head"
+				},
+				"search_panel_field": {
+					"field": "cateories_id",
+					"type": "search_panel_field",
+					"required": false,
+					"alwaysOnPanel": false
+				},
+				"search_panel_field5": {
+					"field": "topic",
+					"type": "search_panel_field",
+					"required": false,
+					"alwaysOnPanel": false
+				},
+				"search_panel_field4": {
+					"field": "question",
+					"type": "search_panel_field",
+					"required": false,
+					"alwaysOnPanel": false
+				},
+				"search_panel_field3": {
+					"field": "id_topics",
+					"type": "search_panel_field",
+					"required": false,
+					"alwaysOnPanel": false
+				},
+				"search_panel_field2": {
+					"field": "creationUser",
+					"type": "search_panel_field",
+					"required": false,
+					"alwaysOnPanel": false
+				},
+				"delete_selected": {
+					"type": "delete_selected"
+				},
+				"-3": {
+					"type": "-"
+				},
+				"advsearch_link": {
+					"type": "advsearch_link"
+				},
+				"show_search_panel": {
+					"type": "show_search_panel"
+				},
+				"hide_search_panel": {
+					"type": "hide_search_panel"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"changepassword_link": {
+					"type": "changepassword_link"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"simple_search": {
+					"type": "simple_search"
+				},
+				"search_panel": {
+					"type": "search_panel",
+					"items": [
+						"search_panel_field",
+						"search_panel_field5",
+						"search_panel_field4",
+						"search_panel_field3",
+						"search_panel_field2"
+					],
+					"_flexiblePanel": true
+				},
+				"list_options": {
+					"type": "list_options",
+					"items": [
+						"delete_selected",
+						"-3",
+						"-2",
+						"-1",
+						"-",
+						"advsearch_link",
+						"show_search_panel",
+						"hide_search_panel"
+					]
+				},
+				"-": {
+					"type": "-"
+				},
+				"-1": {
+					"type": "-"
+				},
+				"-2": {
+					"type": "-"
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"logout_link",
+						"changepassword_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"simple_grid_field": {
+					"type": "grid_field_label",
+					"field": "cateories_id"
+				},
+				"simple_grid_field3": {
+					"type": "grid_field_label",
+					"field": "topic"
+				},
+				"simple_grid_field5": {
+					"type": "grid_field_label",
+					"field": "creationUser",
+					"label": {
+						"field": "creationUser",
+						"table": "topics",
+						"type": 3
+					}
+				},
+				"filter_panel": {
+					"type": "filter_panel",
+					"items": []
+				},
+				"print_panel": {
+					"type": "print_panel",
+					"items": [
+						"print_details"
+					]
+				},
+				"print_details": {
+					"type": "print_details",
+					"tables": {
+						"2684380970": true
+					}
+				},
+				"details_preview": {
+					"type": "details_preview",
+					"table": 2684380970,
+					"items": [],
+					"popup": false,
+					"hideEmptyPreview": false,
+					"proceedLink": false,
+					"pageId": "list"
+				},
+				"grid_field": {
+					"field": "countReplies",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field_label": {
+					"type": "grid_field_label",
+					"field": "countReplies"
+				},
+				"grid_field1": {
+					"field": "LastUpdateDate",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false,
+					"nowrap": false
+				},
+				"grid_field_label1": {
+					"type": "grid_field_label",
+					"field": "LastUpdateDate",
+					"label": {
+						"field": "LastUpdateDate",
+						"table": "topics",
+						"type": 3
+					},
+					"nowrap": false
+				},
+				"custom_button": {
+					"eventId": "Subscribe",
+					"label": {
+						"text": "Subscribe",
+						"type": 0
+					},
+					"type": "custom_button",
+					"buttonSize": "normal",
+					"buttonStyle": "success",
+					"icon": {
+						"glyph": "heart"
+					},
+					"eventGid": 3930643869
+				},
+				"custom_button1": {
+					"eventId": "Unsuscribe",
+					"label": {
+						"text": "Unsubscribe",
+						"type": 0
+					},
+					"type": "custom_button",
+					"buttonSize": "normal",
+					"buttonStyle": "success",
+					"icon": {
+						"glyph": "remove"
+					},
+					"eventGid": 194928651
+				},
+				"grid_field2": {
+					"field": "countView",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field_label2": {
+					"type": "grid_field_label",
+					"field": "countView",
+					"label": {
+						"field": "countView",
+						"table": "topics",
+						"type": 3
+					}
+				}
+			},
+			"version": 4,
+			"pageWidth": "standard",
+			"menuWidth": "full",
+			"pageAlign": "left",
+			"fixedTopbar": true,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "masterlist",
+			"type": "masterlist",
+			"layoutId": "masterlist",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"top": {
+					"modelId": "masterlist-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"back_master"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0,
+							"width": "150px"
+						},
+						"c": {
+							"model": "c1",
+							"items": [
+								"masterlist_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0,
+							"width": "100%"
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "horizontal-grid",
+					"grid": [
+						{
+							"section": "head",
+							"cells": [
+								{
+									"cell": "headcell_field"
+								},
+								{
+									"cell": "headcell_field1"
+								},
+								{
+									"cell": "headcell_field2",
+									"colspan": 2
+								}
+							]
+						},
+						{
+							"section": "body",
+							"cells": [
+								{
+									"cell": "cell_field"
+								},
+								{
+									"cell": "cell_field1"
+								},
+								{
+									"cell": "cell_field2",
+									"colspan": 2,
+									"rowspan": 3
+								}
+							]
+						},
+						{
+							"section": "body",
+							"cells": [
+								{
+									"cell": "cell_field8",
+									"rowspan": 1
+								},
+								{
+									"cell": "cell_field9",
+									"rowspan": 1
+								}
+							]
+						},
+						{
+							"section": "body",
+							"cells": [
+								{
+									"cell": "cell_field6"
+								},
+								{
+									"cell": "cell_field7"
+								}
+							]
+						},
+						{
+							"section": "foot",
+							"cells": [
+								{
+									"cell": "footcell_field"
+								},
+								{
+									"cell": "footcell_field1"
+								},
+								{
+									"cell": "footcell_field2"
+								},
+								{
+									"cell": "footcell_field3"
+								}
+							]
+						}
+					],
+					"cells": {
+						"headcell_field": {
+							"model": "headcell_field",
+							"items": [],
+							"field": "id_topics",
+							"columnName": "field"
+						},
+						"cell_field": {
+							"model": "cell_field",
+							"items": [
+								"grid_field_label"
+							],
+							"field": "id_topics",
+							"columnName": "field"
+						},
+						"footcell_field": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "id_topics",
+							"columnName": "field"
+						},
+						"headcell_field1": {
+							"model": "headcell_field",
+							"items": [],
+							"field": "id_topics",
+							"columnName": "field"
+						},
+						"cell_field1": {
+							"model": "cell_field",
+							"items": [
+								"grid_field"
+							],
+							"field": "id_topics",
+							"columnName": "field",
+							"align": "left"
+						},
+						"footcell_field1": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "id_topics",
+							"columnName": "field"
+						},
+						"headcell_field2": {
+							"model": "headcell_field",
+							"items": [
+								"simple_grid_field6"
+							],
+							"field": "",
+							"columnName": ""
+						},
+						"cell_field2": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field3"
+							],
+							"field": "",
+							"columnName": ""
+						},
+						"footcell_field2": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "",
+							"columnName": ""
+						},
+						"footcell_field3": {
+							"model": "footcell_field",
+							"items": [],
+							"field": "",
+							"columnName": ""
+						},
+						"cell_field6": {
+							"model": "cell_field",
+							"items": [],
+							"columnName": "field",
+							"field": "id_topics"
+						},
+						"cell_field7": {
+							"model": "cell_field",
+							"items": [],
+							"columnName": "field",
+							"field": "id_topics"
+						},
+						"cell_field8": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field7"
+							],
+							"columnName": "field",
+							"field": "id_topics"
+						},
+						"cell_field9": {
+							"model": "cell_field",
+							"items": [
+								"simple_grid_field4"
+							],
+							"columnName": "field",
+							"field": "id_topics"
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"masterlist_header": {
+					"type": "masterlist_header",
+					"title": {
+						"page": "masterlist",
+						"table": "topics",
+						"type": 7
+					}
+				},
+				"back_master": {
+					"type": "back_master",
+					"icon": {
+						"glyph": "home"
+					},
+					"label": {
+						"type": 0,
+						"text": "Return to Topics"
+					},
+					"buttonSize": "normal",
+					"buttonStyle": "success"
+				},
+				"simple_grid_field3": {
+					"field": "question",
+					"type": "grid_field"
+				},
+				"simple_grid_field4": {
+					"field": "creationUser",
+					"type": "grid_field"
+				},
+				"simple_grid_field6": {
+					"type": "grid_field_label",
+					"field": "question"
+				},
+				"simple_grid_field7": {
+					"type": "grid_field_label",
+					"field": "creationUser",
+					"bold": true
+				},
+				"grid_field": {
+					"field": "id_topics",
+					"type": "grid_field"
+				},
+				"grid_field_label": {
+					"type": "grid_field_label",
+					"field": "id_topics",
+					"label": {
+						"field": "id_topics",
+						"table": "topics",
+						"type": 3
+					}
+				}
+			},
+			"version": 4,
+			"pageWidth": "full",
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {
+				"English": "{%topic}"
+			}
+		},
+		{
+			"id": "masterprint",
+			"type": "masterprint",
+			"layoutId": "masterprint",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"top": {
+					"modelId": "masterlist-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"masterprint_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"masterprint_header": {
+					"type": "masterprint_header"
+				}
+			},
+			"version": 4,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {
+				"English": "{%topic}"
+			}
+		},
+		{
+			"id": "print",
+			"type": "print",
+			"layoutId": "basic",
+			"disabled": 1,
+			"default": 0,
+			"forms": {
+				"top": {
+					"modelId": "print-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c4"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c2": {
+							"model": "c2",
+							"items": [
+								"print_header",
+								"print_subheader"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c4": {
+							"model": "c4",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "print-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"print_pages"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "print-below-grid",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"simple_grid_field",
+								"simple_grid_field1",
+								"simple_grid_field2",
+								"simple_grid_field3",
+								"simple_grid_field4",
+								"simple_grid_field5"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"details_preview"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"print_header": {
+					"type": "print_header"
+				},
+				"print_subheader": {
+					"type": "print_subheader"
+				},
+				"print_pages": {
+					"type": "print_pages"
+				},
+				"simple_grid_field": {
+					"field": "id_topics",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field1": {
+					"field": "cateories_id",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field2": {
+					"field": "topic",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field3": {
+					"field": "question",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field4": {
+					"field": "creationUser",
+					"type": "simple_grid_field"
+				},
+				"simple_grid_field5": {
+					"field": "creationDate",
+					"type": "simple_grid_field"
+				},
+				"details_preview": {
+					"type": "details_preview",
+					"table": 2684380970,
+					"items": [],
+					"popup": false
+				}
+			},
+			"version": 4,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "search",
+			"type": "search",
+			"layoutId": "topbar",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "topbar-edit",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								},
+								{
+									"cell": "c3"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"logo"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"menu"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c3": {
+							"model": "c3",
+							"items": [
+								"loginform_login",
+								"username_button"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "search-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"search_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "search-above-grid",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "search-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"search_search",
+								"search_reset",
+								"search_back_list",
+								"search_cancel"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-search",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c6"
+								},
+								{
+									"cell": "c7"
+								},
+								{
+									"cell": "c5"
+								},
+								{
+									"cell": "c8"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c"
+								},
+								{
+									"cell": "c9"
+								},
+								{
+									"cell": "c10"
+								},
+								{
+									"cell": "c11"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c12"
+								},
+								{
+									"cell": "c13"
+								},
+								{
+									"cell": "c14"
+								},
+								{
+									"cell": "c15"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c16"
+								},
+								{
+									"cell": "c17"
+								},
+								{
+									"cell": "c18"
+								},
+								{
+									"cell": "c19"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c20"
+								},
+								{
+									"cell": "c21"
+								},
+								{
+									"cell": "c22"
+								},
+								{
+									"cell": "c23"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c24"
+								},
+								{
+									"cell": "c25"
+								},
+								{
+									"cell": "c26"
+								},
+								{
+									"cell": "c27"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c28"
+								},
+								{
+									"cell": "c29"
+								},
+								{
+									"cell": "c30"
+								},
+								{
+									"cell": "c31"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c32"
+								},
+								{
+									"cell": "c33"
+								},
+								{
+									"cell": "c34"
+								},
+								{
+									"cell": "c35"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c36"
+								},
+								{
+									"cell": "c37"
+								},
+								{
+									"cell": "c38"
+								},
+								{
+									"cell": "c39"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c6": {
+							"model": "c6",
+							"items": [
+								"integrated_search_field13"
+							],
+							"field": "id_topics"
+						},
+						"c7": {
+							"model": "c7",
+							"items": [
+								"integrated_search_field14"
+							],
+							"field": "id_topics"
+						},
+						"c5": {
+							"model": "c5",
+							"items": [
+								"integrated_search_field"
+							],
+							"field": "id_topics"
+						},
+						"c8": {
+							"model": "c8",
+							"items": [
+								"integrated_search_field15"
+							],
+							"field": "id_topics"
+						},
+						"c": {
+							"model": "c6",
+							"items": [
+								"integrated_search_field16"
+							],
+							"field": "cateories_id"
+						},
+						"c9": {
+							"model": "c7",
+							"items": [
+								"integrated_search_field17"
+							],
+							"field": "cateories_id"
+						},
+						"c10": {
+							"model": "c5",
+							"items": [
+								"integrated_search_field1"
+							],
+							"field": "cateories_id"
+						},
+						"c11": {
+							"model": "c8",
+							"items": [
+								"integrated_search_field18"
+							],
+							"field": "cateories_id"
+						},
+						"c12": {
+							"model": "c6",
+							"items": [
+								"integrated_search_field19"
+							],
+							"field": "topic"
+						},
+						"c13": {
+							"model": "c7",
+							"items": [
+								"integrated_search_field20"
+							],
+							"field": "topic"
+						},
+						"c14": {
+							"model": "c5",
+							"items": [
+								"integrated_search_field2"
+							],
+							"field": "topic"
+						},
+						"c15": {
+							"model": "c8",
+							"items": [
+								"integrated_search_field21"
+							],
+							"field": "topic"
+						},
+						"c16": {
+							"model": "c6",
+							"items": [
+								"integrated_search_field22"
+							],
+							"field": "question"
+						},
+						"c17": {
+							"model": "c7",
+							"items": [
+								"integrated_search_field23"
+							],
+							"field": "question"
+						},
+						"c18": {
+							"model": "c5",
+							"items": [
+								"integrated_search_field3"
+							],
+							"field": "question"
+						},
+						"c19": {
+							"model": "c8",
+							"items": [
+								"integrated_search_field24"
+							],
+							"field": "question"
+						},
+						"c20": {
+							"model": "c6",
+							"items": [
+								"integrated_search_field25"
+							],
+							"field": "creationUser"
+						},
+						"c21": {
+							"model": "c7",
+							"items": [
+								"integrated_search_field26"
+							],
+							"field": "creationUser"
+						},
+						"c22": {
+							"model": "c5",
+							"items": [
+								"integrated_search_field4"
+							],
+							"field": "creationUser"
+						},
+						"c23": {
+							"model": "c8",
+							"items": [
+								"integrated_search_field27"
+							],
+							"field": "creationUser"
+						},
+						"c24": {
+							"model": "c6",
+							"items": [
+								"search_field_label"
+							],
+							"field": "countReplies"
+						},
+						"c25": {
+							"model": "c7",
+							"items": [
+								"search_field_options"
+							],
+							"field": "countReplies"
+						},
+						"c26": {
+							"model": "c5",
+							"items": [
+								"search_field"
+							],
+							"field": "countReplies"
+						},
+						"c27": {
+							"model": "c8",
+							"items": [
+								"search_field_between"
+							],
+							"field": "countReplies"
+						},
+						"c28": {
+							"model": "c6",
+							"items": [
+								"search_field_label1"
+							],
+							"field": "LastUpdateDate"
+						},
+						"c29": {
+							"model": "c7",
+							"items": [
+								"search_field_options1"
+							],
+							"field": "LastUpdateDate"
+						},
+						"c30": {
+							"model": "c5",
+							"items": [
+								"search_field1"
+							],
+							"field": "LastUpdateDate"
+						},
+						"c31": {
+							"model": "c8",
+							"items": [
+								"search_field_between1"
+							],
+							"field": "LastUpdateDate"
+						},
+						"c32": {
+							"model": "c6",
+							"items": [
+								"search_field_label2"
+							],
+							"field": "id_suscriptions"
+						},
+						"c33": {
+							"model": "c7",
+							"items": [
+								"search_field_options2"
+							],
+							"field": "id_suscriptions"
+						},
+						"c34": {
+							"model": "c5",
+							"items": [
+								"search_field2"
+							],
+							"field": "id_suscriptions"
+						},
+						"c35": {
+							"model": "c8",
+							"items": [
+								"search_field_between2"
+							],
+							"field": "id_suscriptions"
+						},
+						"c36": {
+							"model": "c6",
+							"items": [
+								"search_field_label3"
+							],
+							"field": "countView"
+						},
+						"c37": {
+							"model": "c7",
+							"items": [
+								"search_field_options3"
+							],
+							"field": "countView"
+						},
+						"c38": {
+							"model": "c5",
+							"items": [
+								"search_field3"
+							],
+							"field": "countView"
+						},
+						"c39": {
+							"model": "c8",
+							"items": [
+								"search_field_between3"
+							],
+							"field": "countView"
+						}
+					},
+					"deferredItems": [],
+					"separateLabels": true
+				}
+			},
+			"items": {
+				"search_header": {
+					"type": "search_header"
+				},
+				"search_search": {
+					"type": "search_search"
+				},
+				"search_reset": {
+					"type": "search_reset"
+				},
+				"search_back_list": {
+					"type": "search_back_list"
+				},
+				"search_cancel": {
+					"type": "search_cancel"
+				},
+				"integrated_search_field": {
+					"field": "id_topics",
+					"type": "search_field",
+					"required": false
+				},
+				"integrated_search_field1": {
+					"field": "cateories_id",
+					"type": "search_field",
+					"required": false
+				},
+				"integrated_search_field2": {
+					"field": "topic",
+					"type": "search_field",
+					"required": false
+				},
+				"integrated_search_field3": {
+					"field": "question",
+					"type": "search_field",
+					"required": false
+				},
+				"integrated_search_field4": {
+					"field": "creationUser",
+					"type": "search_field",
+					"required": false
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"logout_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"integrated_search_field13": {
+					"type": "search_field_label",
+					"field": "id_topics"
+				},
+				"integrated_search_field14": {
+					"type": "search_field_options",
+					"field": "id_topics"
+				},
+				"integrated_search_field15": {
+					"type": "search_field_between",
+					"field": "id_topics"
+				},
+				"integrated_search_field16": {
+					"type": "search_field_label",
+					"field": "cateories_id"
+				},
+				"integrated_search_field17": {
+					"type": "search_field_options",
+					"field": "cateories_id"
+				},
+				"integrated_search_field18": {
+					"type": "search_field_between",
+					"field": "cateories_id"
+				},
+				"integrated_search_field19": {
+					"type": "search_field_label",
+					"field": "topic"
+				},
+				"integrated_search_field20": {
+					"type": "search_field_options",
+					"field": "topic"
+				},
+				"integrated_search_field21": {
+					"type": "search_field_between",
+					"field": "topic"
+				},
+				"integrated_search_field22": {
+					"type": "search_field_label",
+					"field": "question"
+				},
+				"integrated_search_field23": {
+					"type": "search_field_options",
+					"field": "question"
+				},
+				"integrated_search_field24": {
+					"type": "search_field_between",
+					"field": "question"
+				},
+				"integrated_search_field25": {
+					"type": "search_field_label",
+					"field": "creationUser"
+				},
+				"integrated_search_field26": {
+					"type": "search_field_options",
+					"field": "creationUser"
+				},
+				"integrated_search_field27": {
+					"type": "search_field_between",
+					"field": "creationUser"
+				},
+				"search_field": {
+					"field": "countReplies",
+					"type": "search_field",
+					"required": false
+				},
+				"search_field_label": {
+					"type": "search_field_label",
+					"field": "countReplies"
+				},
+				"search_field_options": {
+					"type": "search_field_options",
+					"field": "countReplies"
+				},
+				"search_field_between": {
+					"type": "search_field_between",
+					"field": "countReplies"
+				},
+				"search_field1": {
+					"field": "LastUpdateDate",
+					"type": "search_field",
+					"required": false
+				},
+				"search_field_label1": {
+					"type": "search_field_label",
+					"field": "LastUpdateDate"
+				},
+				"search_field_options1": {
+					"type": "search_field_options",
+					"field": "LastUpdateDate"
+				},
+				"search_field_between1": {
+					"type": "search_field_between",
+					"field": "LastUpdateDate"
+				},
+				"search_field2": {
+					"field": "id_suscriptions",
+					"type": "search_field",
+					"required": false
+				},
+				"search_field_label2": {
+					"type": "search_field_label",
+					"field": "id_suscriptions"
+				},
+				"search_field_options2": {
+					"type": "search_field_options",
+					"field": "id_suscriptions"
+				},
+				"search_field_between2": {
+					"type": "search_field_between",
+					"field": "id_suscriptions"
+				},
+				"search_field3": {
+					"field": "countView",
+					"type": "search_field",
+					"required": false
+				},
+				"search_field_label3": {
+					"type": "search_field_label",
+					"field": "countView"
+				},
+				"search_field_options3": {
+					"type": "search_field_options",
+					"field": "countView"
+				},
+				"search_field_between3": {
+					"type": "search_field_between",
+					"field": "countView"
+				}
+			},
+			"version": 4,
+			"pageWidth": "full",
+			"fixedTopbar": true,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "view",
+			"type": "view",
+			"layoutId": "topbar",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "topbar-edit",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								},
+								{
+									"cell": "c3"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"logo"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"menu"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c3": {
+							"model": "c3",
+							"items": [
+								"loginform_login",
+								"username_button"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "view-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"view_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "view-above-grid",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "view-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"view_back_list",
+								"view_close"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"hamburger"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-edit",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c4"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c"
+								},
+								{
+									"cell": "c3"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c5"
+								},
+								{
+									"cell": "c6"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c7"
+								},
+								{
+									"cell": "c8"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c11"
+								},
+								{
+									"cell": "c12"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c1",
+									"colspan": 2
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c4": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field6"
+							],
+							"field": "id_topics"
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field"
+							],
+							"field": "id_topics"
+						},
+						"c": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field7"
+							],
+							"field": "cateories_id"
+						},
+						"c3": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field1"
+							],
+							"field": "cateories_id"
+						},
+						"c5": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field8"
+							],
+							"field": "topic"
+						},
+						"c6": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field2"
+							],
+							"field": "topic"
+						},
+						"c7": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field9"
+							],
+							"field": "question"
+						},
+						"c8": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field3"
+							],
+							"field": "question"
+						},
+						"c11": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field11"
+							],
+							"field": "creationDate"
+						},
+						"c12": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field5"
+							],
+							"field": "creationDate"
+						},
+						"c1": {
+							"model": "c1",
+							"items": [
+								"details_preview"
+							],
+							"field": null
+						}
+					},
+					"deferredItems": [],
+					"columnCount": 1,
+					"inlineLabels": true,
+					"separateLabels": true
+				}
+			},
+			"items": {
+				"view_header": {
+					"type": "view_header"
+				},
+				"view_back_list": {
+					"type": "view_back_list"
+				},
+				"view_close": {
+					"type": "view_close"
+				},
+				"hamburger": {
+					"type": "hamburger",
+					"items": [
+						"view_edit"
+					]
+				},
+				"view_edit": {
+					"type": "view_edit"
+				},
+				"integrated_edit_field": {
+					"field": "id_topics",
+					"type": "edit_field"
+				},
+				"integrated_edit_field1": {
+					"field": "cateories_id",
+					"type": "edit_field"
+				},
+				"integrated_edit_field2": {
+					"field": "topic",
+					"type": "edit_field"
+				},
+				"integrated_edit_field3": {
+					"field": "question",
+					"type": "edit_field"
+				},
+				"integrated_edit_field5": {
+					"field": "creationDate",
+					"type": "edit_field"
+				},
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"logout_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"integrated_edit_field6": {
+					"type": "edit_field_label",
+					"field": "id_topics"
+				},
+				"integrated_edit_field7": {
+					"type": "edit_field_label",
+					"field": "cateories_id"
+				},
+				"integrated_edit_field8": {
+					"type": "edit_field_label",
+					"field": "topic"
+				},
+				"integrated_edit_field9": {
+					"type": "edit_field_label",
+					"field": "question"
+				},
+				"integrated_edit_field11": {
+					"type": "edit_field_label",
+					"field": "creationDate"
+				},
+				"details_preview": {
+					"type": "details_preview",
+					"table": 2684380970,
+					"items": [],
+					"popup": false
+				}
+			},
+			"version": 4,
+			"pageWidth": "full",
+			"fixedTopbar": true,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		}
+	],
+	"geoCoding": {
+		"enabled": false,
+		"latField": "",
+		"lonField": "",
+		"addressFields": []
+	},
+	"caption": {
+		"English": "Topics"
+	}
+}

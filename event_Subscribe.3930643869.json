@@ -1,0 +1,6 @@
+{
+	"type": "EVENT_BUTTON",
+	"name": "Subscribe",
+	"serverCode": "while($data = $button->getNextSelectedRecord())\n{\n\t\t$id_topics = $data['id_topics'];\n\t\t$id_user = $_SESSION[\"id_user\"];\n\t\t$rs = DB::Query(\"SELECT id_suscriptions FROM suscriptions where user_id = $id_user and topics_id = $id_topics \");\n\t\tif (! $record = $rs->fetchAssoc() )\n\t\t\t\t{\n\t\t\t\tDB::Exec(\"insert into suscriptions (user_id, topics_id) values ($id_user, $id_topics)\");\n\t\t\t\t}\n}\n$result[\"txt\"] = \"Executed\";",
+	"afterJsCode": "var message = result[\"txt\"];\najax.setMessage(message);\n\n\nlocation.reload();"
+}

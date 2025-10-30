@@ -1,0 +1,2275 @@
+{
+	"app": "PHPRunner",
+	"programVersion": 2,
+	"versionName": "11.1",
+	"build": 36153,
+	"appUser": "PHPRunner 10.4",
+	"name": "forum",
+	"rteType": "INNOVA",
+	"mainDiagram": {
+		"tables": [
+			{
+				"x": 69,
+				"y": 22,
+				"width": 120,
+				"height": 97,
+				"gid": 2473370747
+			},
+			{
+				"x": 910,
+				"y": 236,
+				"width": 120,
+				"height": 116,
+				"gid": 3040666733
+			},
+			{
+				"x": 1060,
+				"y": 236,
+				"width": 120,
+				"height": 200,
+				"gid": 3872830103
+			},
+			{
+				"x": 248,
+				"y": 124,
+				"width": 120,
+				"height": 200,
+				"gid": 2684380970
+			},
+			{
+				"x": 546,
+				"y": 253,
+				"width": 152,
+				"height": 97,
+				"gid": 521694734
+			},
+			{
+				"x": 521,
+				"y": 29,
+				"width": 120,
+				"height": 200,
+				"gid": 2448836153
+			},
+			{
+				"x": 739,
+				"y": 24,
+				"width": 120,
+				"height": 173,
+				"gid": 2375276105
+			}
+		]
+	},
+	"securitySettings": {
+		"sessionControl": {
+			"lifeTime": 15,
+			"sessionName": "zreqYZNmHNz08zqcyQ5p",
+			"JWTSecret": "QznRhy3JE84rTSt8jCuR"
+		},
+		"registration": {
+			"remindMethod": 0,
+			"hashAlgorithm": 0,
+			"passwordValidation": {
+				"strong": false,
+				"minimumLength": 8,
+				"uniqueCharacters": 4,
+				"digitsAndSymbols": 2,
+				"upperAndLowerCase": false
+			}
+		},
+		"captchaSettings": {
+			"captchaType": 0,
+			"siteKey": "",
+			"secretKey": "",
+			"passesCount": 5
+		},
+		"emailSettings": {
+			"fromEmail": "",
+			"usePHPDefinedSMTP": false,
+			"useBuiltInMailer": false,
+			"SMTPServer": "localhost",
+			"SMTPPort": 25,
+			"SMTPUser": "",
+			"SMTPPassword": "",
+			"securityProtocol": 0
+		},
+		"advancedSecurity": {
+			"allowGuestLogin": false
+		},
+		"auditAndLocking": {
+			"loggingMode": 0,
+			"loggingTable": {
+				"connId": "",
+				"table": ""
+			},
+			"loggingFile": "audit.log",
+			"logSecurityActions": false,
+			"lockAfterUnsuccessfulLogin": false,
+			"enableLocking": false,
+			"lockingTable": {
+				"connId": "",
+				"table": ""
+			},
+			"tables": {}
+		},
+		"twoFactorSettings": {
+			"available": false,
+			"required": false,
+			"enable": true,
+			"remember": true,
+			"types": {},
+			"twoFactorField": "",
+			"emailField": "",
+			"phoneField": "",
+			"codeField": "",
+			"projectName": ""
+		},
+		"staticPermissions": {
+			"groups": {
+				"Default": {
+					"permissions": {
+						"user": {
+							"mask": "",
+							"table": "user",
+							"restrictedPages": {}
+						},
+						"topics": {
+							"mask": "AEDSPI",
+							"table": "topics",
+							"restrictedPages": {}
+						},
+						"suscriptions": {
+							"mask": "",
+							"table": "suscriptions",
+							"restrictedPages": {}
+						},
+						"replies": {
+							"mask": "AEDSPI",
+							"table": "replies",
+							"restrictedPages": {}
+						},
+						"profil": {
+							"mask": "ES",
+							"table": "profil",
+							"restrictedPages": {}
+						},
+						"log_seen": {
+							"mask": "",
+							"table": "log_seen",
+							"restrictedPages": {}
+						},
+						"cateories": {
+							"mask": "",
+							"table": "cateories",
+							"restrictedPages": {}
+						},
+						"<global>": {
+							"mask": "S",
+							"table": "<global>",
+							"restrictedPages": {}
+						}
+					},
+					"username": "Default",
+					"admin": false,
+					"wrAdmin": false
+				},
+				"Administrator": {
+					"permissions": {
+						"user": {
+							"mask": "AEDSPI",
+							"table": "user",
+							"restrictedPages": {}
+						},
+						"topics": {
+							"mask": "AEDSPI",
+							"table": "topics",
+							"restrictedPages": {}
+						},
+						"suscriptions": {
+							"mask": "AEDSPI",
+							"table": "suscriptions",
+							"restrictedPages": {}
+						},
+						"replies": {
+							"mask": "AEDSPI",
+							"table": "replies",
+							"restrictedPages": {}
+						},
+						"profil": {
+							"mask": "ES",
+							"table": "profil",
+							"restrictedPages": {}
+						},
+						"log_seen": {
+							"mask": "AEDSPI",
+							"table": "log_seen",
+							"restrictedPages": {}
+						},
+						"cateories": {
+							"mask": "AEDSPI",
+							"table": "cateories",
+							"restrictedPages": {}
+						},
+						"<global>": {
+							"mask": "S",
+							"table": "<global>",
+							"restrictedPages": {}
+						}
+					},
+					"username": "Administrator",
+					"admin": false,
+					"wrAdmin": false
+				},
+				"<Default>": {
+					"permissions": {
+						"user": {
+							"mask": "",
+							"table": "user",
+							"restrictedPages": {}
+						},
+						"topics": {
+							"mask": "",
+							"table": "topics",
+							"restrictedPages": {}
+						},
+						"suscriptions": {
+							"mask": "",
+							"table": "suscriptions",
+							"restrictedPages": {}
+						},
+						"replies": {
+							"mask": "",
+							"table": "replies",
+							"restrictedPages": {}
+						},
+						"profil": {
+							"mask": "",
+							"table": "profil",
+							"restrictedPages": {}
+						},
+						"log_seen": {
+							"mask": "",
+							"table": "log_seen",
+							"restrictedPages": {}
+						},
+						"cateories": {
+							"mask": "",
+							"table": "cateories",
+							"restrictedPages": {}
+						},
+						"<global>": {
+							"mask": "",
+							"table": "<global>",
+							"restrictedPages": {}
+						}
+					},
+					"username": "<Default>",
+					"admin": false,
+					"wrAdmin": false
+				}
+			}
+		}
+	},
+	"encryption": {
+		"connEncryptInfo": {
+			"forum_at_localhost": {
+				"encryptAlgorithm": 128,
+				"connId": "forum_at_localhost"
+			}
+		}
+	},
+	"generateDebugInfo": "",
+	"visualStudioVersion": 10,
+	"targetFramework": "4.0",
+	"restAPIReturnEncodedBinary": "",
+	"restAPIAcceptEncodedBinary": "",
+	"emailTemplates": {
+		"English": {
+			"Message to admin after user's registration": {
+				"name": "Message to admin after user's registration",
+				"template": "Notification on registering\n\nUser registered at %url%\n\nId: %id_user_value%\nLogin: %login_value%\nEmail: %email_value%\nDisplay Name: %displayName_value%",
+				"useDefault": false,
+				"useHTML": ""
+			},
+			"Message to user after registration": {
+				"name": "Message to user after registration",
+				"template": "Notification on registering\n\nYou have registered as a user at %url%\n\nClick this link to confirm your account and finish the registration:\n%activateurl%\nIf you are unable to click on the link, copy and paste it into your browser window.\n\nId: %id_user_value%\nLogin: %login_value%\nEmail: %email_value%\nDisplay Name: %displayName_value%",
+				"useDefault": false,
+				"useHTML": ""
+			},
+			"Reset password email": {
+				"name": "Reset password email",
+				"template": "",
+				"useDefault": true,
+				"useHTML": ""
+			}
+		}
+	},
+	"dbConnections": [
+		{
+			"id": "forum_at_localhost",
+			"name": "foroag",
+			"customName": true,
+			"connString": "mysql;desarrolloag.com.ar;adminag;enterprise;;foroag;;1",
+			"buildParams": {
+				"customConnections": [
+					{
+						"name": "hostinger",
+						"code": "$host=\"localhost\";\n$user=\"u637977917_forum\";\n$pwd=\"Esta password no es la buena de Hostinger #\";\n$port=\"\";\n$sys_dbname=\"u637977917_forum\";"
+					}
+				],
+				"selectedCustomConn": null
+			}
+		}
+	],
+	"defaultConnID": "forum_at_localhost",
+	"phpSpreadsheet": "",
+	"landingSettings": {
+		"type": 0,
+		"table": "",
+		"pageId": "",
+		"page": ""
+	},
+	"smsSettings": {
+		"phoneField": "phone"
+	},
+	"mapSettings": {
+		"embed": ""
+	},
+	"copyFieldSettings": {
+		"copyViewFormat": ""
+	},
+	"createAppSettings": {
+		"appVersion": "",
+		"appURL": ""
+	},
+	"menus": [
+		{
+			"id": "main",
+			"root": {
+				"children": [
+					{
+						"id": "1",
+						"parent": "0",
+						"data": {
+							"name": {
+								"table": "topics",
+								"type": 6
+							},
+							"href": "mypage.htm",
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-pencil",
+							"pageType": "list",
+							"table": 2448836153
+						}
+					},
+					{
+						"id": "2",
+						"parent": "0",
+						"data": {
+							"name": {
+								"table": "cateories",
+								"type": 6
+							},
+							"href": "mypage.htm",
+							"pageId": "list",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-list",
+							"pageType": "list",
+							"table": 2473370747
+						}
+					},
+					{
+						"id": "3",
+						"parent": "0",
+						"data": {
+							"name": {
+								"table": "profil",
+								"type": 6
+							},
+							"href": "mypage.htm",
+							"pageId": "view",
+							"itemType": 2,
+							"linkType": 0,
+							"iconType": 2,
+							"iconName": "glyphicon-user",
+							"pageType": "view",
+							"table": 3872830103
+						}
+					},
+					{
+						"id": "4",
+						"parent": "0",
+						"children": [
+							{
+								"id": "5",
+								"parent": "4",
+								"data": {
+									"name": {
+										"table": "user",
+										"type": 6
+									},
+									"href": "mypage.htm",
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"iconType": 2,
+									"iconName": "glyphicon-user",
+									"pageType": "list",
+									"table": 2375276105
+								}
+							},
+							{
+								"id": "6",
+								"parent": "4",
+								"data": {
+									"name": {
+										"table": "suscriptions",
+										"type": 6
+									},
+									"href": "mypage.htm",
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"iconType": 2,
+									"iconName": "glyphicon-heart",
+									"pageType": "list",
+									"table": 521694734
+								}
+							},
+							{
+								"id": "7",
+								"parent": "4",
+								"data": {
+									"name": {
+										"table": "log_seen",
+										"type": 6
+									},
+									"href": "mypage.htm",
+									"pageId": "list",
+									"itemType": 2,
+									"linkType": 0,
+									"iconType": 2,
+									"iconName": "glyphicon-time",
+									"pageType": "list",
+									"table": 3040666733
+								}
+							}
+						],
+						"data": {
+							"name": {
+								"text": "Security",
+								"type": 0
+							},
+							"iconType": 3,
+							"iconName": "fa-star",
+							"pageType": "",
+							"table": null
+						}
+					}
+				]
+			}
+		}
+	],
+	"customTemplates": {
+		"header": "<?PHP\r\nglobal $customjscript;\r\necho $customjscript;\r\n?>"
+	},
+	"globalPages": [
+		{
+			"id": "changepwd",
+			"type": "changepwd",
+			"layoutId": "first",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "changepwd-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"changepwd_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "changepwd-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"changepwd_message"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "changepwd-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c3"
+								},
+								{
+									"cell": "c4"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c5"
+								},
+								{
+									"cell": "c6"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"oldpass_label"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"oldpass"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c3": {
+							"model": "c3",
+							"items": [
+								"newpass_label"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c4": {
+							"model": "c4",
+							"items": [
+								"newpass"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c5": {
+							"model": "c5",
+							"items": [
+								"confirm_label"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c6": {
+							"model": "c6",
+							"items": [
+								"confirm"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"footer": {
+					"modelId": "changepwd-footer",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"changepwd_button",
+								"changepwd_back"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"oldpass_label": {
+					"type": "oldpass_label"
+				},
+				"newpass_label": {
+					"type": "newpass_label"
+				},
+				"confirm_label": {
+					"type": "confirm_label"
+				},
+				"oldpass": {
+					"type": "oldpass"
+				},
+				"newpass": {
+					"type": "newpass"
+				},
+				"confirm": {
+					"type": "confirm"
+				},
+				"changepwd_message": {
+					"type": "changepwd_message"
+				},
+				"changepwd_button": {
+					"type": "changepwd_button"
+				},
+				"changepwd_back": {
+					"type": "changepwd_back"
+				},
+				"changepwd_header": {
+					"type": "changepwd_header"
+				}
+			},
+			"version": 4,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "changepwd_success",
+			"type": "changepwd_success",
+			"layoutId": "first",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "changepwd-success-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"changepwd_success_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "changepwd-success-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"changepwd_success_message"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"footer": {
+					"modelId": "changepwd-success-footer",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"changepwd_success_back"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"changepwd_success_message": {
+					"type": "changepwd_success_message"
+				},
+				"changepwd_success_back": {
+					"type": "changepwd_success_back"
+				},
+				"changepwd_success_header": {
+					"type": "changepwd_success_header"
+				}
+			},
+			"version": 4,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "login",
+			"type": "login",
+			"layoutId": "first",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "login-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"login_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "login-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"login_message"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "login-labels",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c3"
+								},
+								{
+									"cell": "c4"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c9"
+								},
+								{
+									"cell": "c10"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"username_label"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"username"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c3": {
+							"model": "c3",
+							"items": [
+								"password_label"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c4": {
+							"model": "c4",
+							"items": [
+								"password"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c9": {
+							"model": "c9",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c10": {
+							"model": "c10",
+							"items": [
+								"remember_password"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"footer": {
+					"modelId": "login-footer",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"login_button",
+								"continue_login_button",
+								"guest_login",
+								"login_remind",
+								"loginform_register_link"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"superbottom": {
+					"modelId": "login-superbottom",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"username_label": {
+					"type": "username_label"
+				},
+				"username": {
+					"type": "username"
+				},
+				"password_label": {
+					"type": "password_label"
+				},
+				"password": {
+					"type": "password"
+				},
+				"login_message": {
+					"type": "login_message"
+				},
+				"login_button": {
+					"type": "login_button"
+				},
+				"guest_login": {
+					"type": "guest_login"
+				},
+				"login_header": {
+					"type": "login_header"
+				},
+				"remember_password": {
+					"type": "remember_password"
+				},
+				"continue_login_button": {
+					"type": "continue_login_button"
+				},
+				"login_remind": {
+					"type": "login_remind",
+					"buttonSize": "normal",
+					"buttonStyle": "warning"
+				},
+				"loginform_register_link": {
+					"type": "loginform_register_link",
+					"buttonSize": "normal",
+					"buttonStyle": "success",
+					"tooltip": {
+						"text": "Create a new user",
+						"type": 0
+					}
+				}
+			},
+			"version": 4,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "menu",
+			"type": "menu",
+			"layoutId": "topbar",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "menu-topbar-menu",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"logo",
+								"menu"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"loginform_login",
+								"username_button"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "empty-above-grid",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "welcome",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c": {
+							"model": "c1",
+							"items": [
+								"welcome_group"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"logo": {
+					"type": "logo"
+				},
+				"menu": {
+					"type": "menu"
+				},
+				"welcome_item": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "cateories",
+					"linkPage": "list",
+					"linkText": {
+						"table": "cateories",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "th-list"
+					},
+					"linkComments": {
+						"text": "Grouping of topics, to facilitate the search and selection of topics of interest",
+						"type": 0
+					},
+					"background": "#3CB371",
+					"linkType": 0
+				},
+				"welcome_item3": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "suscriptions",
+					"linkPage": "list",
+					"linkText": {
+						"table": "suscriptions",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "heart"
+					},
+					"linkComments": {
+						"text": "User selection of those topics that interest him the most. It facilitates with the consultation of the same",
+						"type": 0
+					},
+					"background": "#23d12a",
+					"linkType": 0
+				},
+				"welcome_item4": {
+					"type": "welcome_item",
+					"linkUrl": "",
+					"linkTable": "topics",
+					"linkPage": "list",
+					"linkText": {
+						"table": "topics",
+						"type": 6
+					},
+					"linkIcon": {
+						"glyph": "pencil"
+					},
+					"linkComments": {
+						"text": "Topics, queries, questions that you want to share with other users",
+						"type": 0
+					},
+					"background": "#6493EA",
+					"linkType": 0
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"logout_link",
+						"changepassword_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"changepassword_link": {
+					"type": "changepassword_link"
+				},
+				"welcome_group": {
+					"type": "welcome_group",
+					"linkText": {
+						"text": "Forum",
+						"type": 0
+					},
+					"linkIcon": {
+						"glyph": "volume-down"
+					},
+					"linkComments": {
+						"type": 0,
+						"text": "It is very important today that in an organization / company the staff can share their doubts or their knowledge with the rest of their colleagues."
+					},
+					"items": [
+						"welcome_item4",
+						"welcome_item3",
+						"welcome_item"
+					],
+					"color": "#ffffff"
+				}
+			},
+			"version": 4,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "register",
+			"type": "register",
+			"layoutId": "nomenu",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"top": {
+					"modelId": "register-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"register_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "register-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"register_message"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"below-grid": {
+					"modelId": "register-below-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"register_save",
+								"back_to_login"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"register_reset"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "simple-edit",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c4"
+								},
+								{
+									"cell": "c2"
+								},
+								{
+									"cell": "c"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c10"
+								},
+								{
+									"cell": "c11"
+								},
+								{
+									"cell": "c12"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c13"
+								},
+								{
+									"cell": "c14"
+								},
+								{
+									"cell": "c15"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c5"
+								},
+								{
+									"cell": "c3"
+								},
+								{
+									"cell": "c6"
+								}
+							],
+							"section": ""
+						},
+						{
+							"cells": [
+								{
+									"cell": "c7"
+								},
+								{
+									"cell": "c8"
+								},
+								{
+									"cell": "c9"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c4": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field4"
+							],
+							"field": "login"
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field"
+							],
+							"field": "login"
+						},
+						"c": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field5"
+							],
+							"field": "login"
+						},
+						"c10": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field8"
+							],
+							"field": "email"
+						},
+						"c11": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field2"
+							],
+							"field": "email"
+						},
+						"c12": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field9"
+							],
+							"field": "email"
+						},
+						"c13": {
+							"model": "c4",
+							"items": [
+								"integrated_edit_field10"
+							],
+							"field": "displayName"
+						},
+						"c14": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field3"
+							],
+							"field": "displayName"
+						},
+						"c15": {
+							"model": "c2",
+							"items": [
+								"integrated_edit_field11"
+							],
+							"field": "displayName"
+						},
+						"c5": {
+							"model": "c4",
+							"items": [
+								"edit_field_label"
+							],
+							"field": "password"
+						},
+						"c3": {
+							"model": "c2",
+							"items": [
+								"edit_field"
+							],
+							"field": "password"
+						},
+						"c6": {
+							"model": "c2",
+							"items": [
+								"edit_field_tooltip"
+							],
+							"field": "password"
+						},
+						"c7": {
+							"model": "c4",
+							"items": [
+								"confirm_password_label"
+							],
+							"field": "confirm_aoel3cx"
+						},
+						"c8": {
+							"model": "c2",
+							"items": [
+								"confirm_password"
+							],
+							"field": "confirm_aoel3cx"
+						},
+						"c9": {
+							"model": "c2",
+							"items": [
+								"confirm_password_tooltip"
+							],
+							"field": "confirm_aoel3cx"
+						}
+					},
+					"deferredItems": [],
+					"columnCount": 1,
+					"inlineLabels": true,
+					"separateLabels": true
+				}
+			},
+			"items": {
+				"register_header": {
+					"type": "register_header",
+					"color": "#ffffff"
+				},
+				"register_reset": {
+					"type": "register_reset"
+				},
+				"register_message": {
+					"type": "register_message"
+				},
+				"register_save": {
+					"type": "register_save"
+				},
+				"back_to_login": {
+					"type": "back_to_login",
+					"color": "#ffffff"
+				},
+				"integrated_edit_field": {
+					"field": "login",
+					"type": "edit_field"
+				},
+				"integrated_edit_field2": {
+					"field": "email",
+					"type": "edit_field"
+				},
+				"integrated_edit_field3": {
+					"field": "displayName",
+					"type": "edit_field"
+				},
+				"integrated_edit_field4": {
+					"type": "edit_field_label",
+					"field": "login",
+					"color": "#ffffff"
+				},
+				"integrated_edit_field5": {
+					"type": "edit_field_tooltip",
+					"field": "login"
+				},
+				"integrated_edit_field8": {
+					"type": "edit_field_label",
+					"field": "email",
+					"color": "#ffffff"
+				},
+				"integrated_edit_field9": {
+					"type": "edit_field_tooltip",
+					"field": "email"
+				},
+				"integrated_edit_field10": {
+					"type": "edit_field_label",
+					"field": "displayName",
+					"color": "#ffffff"
+				},
+				"integrated_edit_field11": {
+					"type": "edit_field_tooltip",
+					"field": "displayName"
+				},
+				"edit_field": {
+					"field": "password",
+					"type": "edit_field"
+				},
+				"edit_field_label": {
+					"type": "edit_field_label",
+					"field": "password"
+				},
+				"edit_field_tooltip": {
+					"type": "edit_field_tooltip",
+					"field": "password"
+				},
+				"confirm_password": {
+					"type": "confirm_password",
+					"field": "confirm_aoel3cx"
+				},
+				"confirm_password_label": {
+					"type": "confirm_password_label",
+					"field": "confirm_aoel3cx"
+				},
+				"confirm_password_tooltip": {
+					"type": "confirm_password_tooltip",
+					"field": "confirm_aoel3cx"
+				}
+			},
+			"version": 4,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "left",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "register_success",
+			"type": "register_success",
+			"layoutId": "first",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "register_success-above",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"register_activate_message"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "register_success-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"register_success_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "register_success-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"register_proceed",
+								"register_close"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"footer": {
+					"modelId": "register_success-footer",
+					"grid": [],
+					"cells": {},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"register_proceed": {
+					"type": "register_proceed"
+				},
+				"register_success_header": {
+					"type": "register_success_header"
+				},
+				"register_close": {
+					"type": "register_close"
+				},
+				"register_activate_message": {
+					"type": "register_activate_message"
+				}
+			},
+			"version": 4,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "remind",
+			"type": "remind",
+			"layoutId": "first",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "remind-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"remind_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"above-grid": {
+					"modelId": "remind-above-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"message"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "remind-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c2"
+								},
+								{
+									"cell": "c3"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c2": {
+							"model": "c2",
+							"items": [
+								"username_email_label"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c3": {
+							"model": "c3",
+							"items": [
+								"username_email"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"footer": {
+					"modelId": "remind-footer",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								},
+								{
+									"cell": "c2"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						},
+						"c2": {
+							"model": "c2",
+							"items": [
+								"remind_button",
+								"back_to_login"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"username_email_label": {
+					"type": "username_email_label"
+				},
+				"username_email": {
+					"type": "username_email"
+				},
+				"message": {
+					"type": "message"
+				},
+				"remind_button": {
+					"type": "remind_button"
+				},
+				"back_to_login": {
+					"type": "back_to_login"
+				},
+				"remind_header": {
+					"type": "remind_header"
+				}
+			},
+			"version": 4,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		},
+		{
+			"id": "remind_success",
+			"type": "remind_success",
+			"layoutId": "first",
+			"disabled": 0,
+			"default": 0,
+			"forms": {
+				"supertop": {
+					"modelId": "panel-top",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"top": {
+					"modelId": "remind-header",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"remind_header"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"grid": {
+					"modelId": "remind_success-grid",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"remind_success_message"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				},
+				"footer": {
+					"modelId": "remind_success-footer",
+					"grid": [
+						{
+							"cells": [
+								{
+									"cell": "c1"
+								}
+							],
+							"section": ""
+						}
+					],
+					"cells": {
+						"c1": {
+							"model": "c1",
+							"items": [
+								"remind_success_submit"
+							],
+							"_t": "Map",
+							"_i": {},
+							"_s": 0
+						}
+					},
+					"deferredItems": [],
+					"recsPerRow": 1
+				}
+			},
+			"items": {
+				"remind_success_submit": {
+					"type": "remind_success_submit"
+				},
+				"remind_header": {
+					"type": "remind_header"
+				},
+				"remind_success_message": {
+					"type": "remind_success_message"
+				}
+			},
+			"version": 4,
+			"imageItem": {
+				"type": "page_image"
+			},
+			"imageBgColor": "#f2f2f2",
+			"controlsBgColor": "white",
+			"imagePosition": "right",
+			"listTotals": 1,
+			"title": {}
+		}
+	],
+	"eventHandlers": [
+		{
+			"eventId": "EVENT_INIT_APP",
+			"code": "$dir = __DIR__;\n\ninclude __DIR__.\"/../MyCode/config.php\"; // Application settings\n$images = $_SESSION['PLUGIN_ICON'];\n\n// To make the application can be installed on desktops\n$customjscript = <<<EOT\n<script type=\"text/javascript\">\n$(window).load(function () {\n\t$('head').append('<meta name=\"mobile-web-app-capable\" content=\"yes\" />');\n\t$('head').append('<link rel=\"manifest\" href=\"manifest.json\" />');              \n\t$('head').append('<link href=\"$images/favicon.ico\" rel=\"shortcut icon\" type=\"image/vnd.microsoft.icon\" />');\n\t\n         });\n</script>\nEOT;"
+		},
+		{
+			"eventId": "EVENT_AFTERSUCCESSFULLLOGIN",
+			"pageType": "login",
+			"code": "$_SESSION['id_user']=$data['id_user']; \n$_SESSION['login']=$data['login']; \n$_SESSION['username']=$data['displayName'];\n\n// Language\nif (!isset($_SESSION['language'])) {\n\t\t$_SESSION['language'] = 'English';\n}"
+		},
+		{
+			"eventId": "EVENT_BEFORECHANGEPASSWORD",
+			"pageType": "changepwd",
+			"code": "$newpassword = md5($newpassword);\nreturn true;"
+		},
+		{
+			"eventId": "EVENT_BEFOREREGISTER",
+			"pageType": "register",
+			"code": "$userdata['userType'] = \"Default\";\n$userdata['image'] = '[{\"name\":\"files\\/usuario_in42azvr.png\",\"usrName\":\"usuario.png\",\"size\":9109,\"type\":\"image\\/png\",\"searchStr\":\"usuario.png,!:sStrEnd\"}]';\nreturn true;"
+		}
+	],
+	"settingsTable": {
+		"connId": "",
+		"table": ""
+	},
+	"messages": {},
+	"projectLogo": {
+		"English": "forum"
+	},
+	"cookieBannerText": {
+		"English": ""
+	}
+}

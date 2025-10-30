@@ -1,0 +1,6 @@
+{
+	"type": "EVENT_AJAX",
+	"name": "topics_ajax",
+	"serverCode": "$data = $ajax->getCurrentRecord();\n$result['id_topics'] = $data['id_topics'];\n// Increase query counter\n$id_topics = $data['id_topics'];\n$id_user = $_SESSION[\"id_user\"];\n$date = now();\nDB::Exec(\"insert into log_seen (user_id, topics_id, displayDate) values ($id_user, $id_topics, '$date')\");",
+	"afterJsCode": "// Put your code here.\nvar id_topics = result[\"id_topics\"];\nwindow.location.href = \"/forum/replies_list.php?masterkey1=\"+id_topics+\"&mastertable=topics\";"
+}

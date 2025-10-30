@@ -1,0 +1,6 @@
+{
+	"type": "EVENT_BUTTON",
+	"name": "Unsuscribe",
+	"serverCode": "while($data = $button->getNextSelectedRecord())\n{\n\t\t$id_topics = $data['id_topics'];\n\t\t$id_user = $_SESSION[\"id_user\"];\n\t\tDB::Exec(\"Delete from suscriptions where topics_id = $id_topics and user_id = $id_user\");\n}\n$result[\"txt\"] = \"Executed\";",
+	"afterJsCode": "var message = result[\"txt\"];\najax.setMessage(message);\n\n\nlocation.reload();"
+}
