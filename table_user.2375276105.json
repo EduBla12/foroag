@@ -338,12 +338,12 @@
 		{
 			"eventId": "EVENT_BEFOREADD",
 			"pageType": "add",
-			"code": "$values[\"password\"] = md5( $values[\"password\"] );\nreturn true;"
+			"code": "//$values[\"password\"] = md5( $values[\"password\"] );\nreturn true;"
 		},
 		{
 			"eventId": "EVENT_BEFOREEDIT",
 			"pageType": "edit",
-			"code": "if ($oldvalues['password'] <> $values['password'] )\n\t{\n\t\t$values[\"password\"] = md5( $values[\"password\"] );\n\t}\nreturn true;"
+			"code": "/*\nif ($oldvalues['password'] <> $values['password'] )\n\t{\n\t\t$values[\"password\"] = md5( $values[\"password\"] );\n\t}\n*/\nreturn true;"
 		}
 	],
 	"sortByFields": {

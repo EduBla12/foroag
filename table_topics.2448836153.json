@@ -2217,288 +2217,196 @@
 					"recsPerRow": 1
 				},
 				"grid": {
-					"modelId": "horizontal-grid",
+					"modelId": "vertical-grid",
 					"grid": [
 						{
-							"section": "head",
 							"cells": [
 								{
-									"cell": "headcell_icons"
-								},
-								{
-									"cell": "headcell_checkbox"
-								},
-								{
-									"cell": "headcell_field"
-								},
-								{
-									"cell": "headcell_field1"
-								},
-								{
-									"cell": "headcell_field2"
-								},
-								{
-									"cell": "headcell_field3"
-								},
-								{
-									"cell": "headcell_field6"
-								},
-								{
-									"cell": "headcell_field4"
+									"cell": "cell_top",
+									"colspan": 2
 								}
-							]
+							],
+							"section": "head"
 						},
 						{
-							"section": "body",
 							"cells": [
 								{
-									"cell": "cell_icons"
-								},
-								{
-									"cell": "cell_checkbox"
+									"cell": "cell_label"
 								},
 								{
 									"cell": "cell_field"
-								},
-								{
-									"cell": "cell_field1"
-								},
-								{
-									"cell": "cell_field2"
-								},
-								{
-									"cell": "cell_field3"
-								},
-								{
-									"cell": "cell_field6"
-								},
-								{
-									"cell": "cell_field4"
-								}
-							]
-						},
-						{
-							"cells": [
-								{
-									"cell": "cell_dpreview",
-									"colspan": 8
 								}
 							],
 							"section": "body"
 						},
 						{
-							"section": "foot",
 							"cells": [
 								{
-									"cell": "footcell_icons"
+									"cell": "cell_label1"
 								},
 								{
-									"cell": "footcell_checkbox"
-								},
-								{
-									"cell": "footcell_field"
-								},
-								{
-									"cell": "footcell_field1"
-								},
-								{
-									"cell": "footcell_field2"
-								},
-								{
-									"cell": "footcell_field3",
-									"colspan": 2
-								},
-								{
-									"cell": "footcell_field4"
+									"cell": "cell_field1"
 								}
-							]
+							],
+							"section": "body"
+						},
+						{
+							"cells": [
+								{
+									"cell": "cell_label2"
+								},
+								{
+									"cell": "cell_field2"
+								}
+							],
+							"section": "body"
+						},
+						{
+							"cells": [
+								{
+									"cell": "cell_label3"
+								},
+								{
+									"cell": "cell_field3"
+								}
+							],
+							"section": "body"
+						},
+						{
+							"cells": [
+								{
+									"cell": "cell_label4"
+								},
+								{
+									"cell": "cell_field4"
+								}
+							],
+							"section": "body"
+						},
+						{
+							"cells": [
+								{
+									"cell": "cell_label5"
+								},
+								{
+									"cell": "cell_field5"
+								}
+							],
+							"section": "body"
+						},
+						{
+							"cells": [
+								{
+									"cell": "cell_dpreview",
+									"colspan": 2
+								}
+							],
+							"section": "foot"
 						}
 					],
 					"cells": {
-						"headcell_field": {
-							"model": "headcell_field",
+						"cell_top": {
+							"model": "cell_top",
+							"items": [
+								"grid_checkbox",
+								"grid_edit"
+							]
+						},
+						"cell_dpreview": {
+							"model": "cell_dpreview",
+							"items": [
+								"details_preview"
+							]
+						},
+						"cell_label": {
+							"model": "cell_label",
 							"items": [
 								"simple_grid_field"
 							],
-							"field": "cateories_id",
-							"columnName": "field",
-							"width": "150px"
+							"field": "cateories_id"
 						},
 						"cell_field": {
 							"model": "cell_field",
 							"items": [
 								"simple_grid_field1"
 							],
-							"field": "cateories_id",
-							"columnName": "field",
-							"width": "150px"
+							"field": "cateories_id"
 						},
-						"footcell_field": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "cateories_id",
-							"columnName": "field"
-						},
-						"headcell_field1": {
-							"model": "headcell_field",
+						"cell_label1": {
+							"model": "cell_label",
 							"items": [
-								"simple_grid_field3"
+								"simple_grid_field5"
 							],
-							"field": "topic",
-							"columnName": "field"
+							"field": "creationUser"
 						},
 						"cell_field1": {
 							"model": "cell_field",
 							"items": [
-								"simple_grid_field2"
+								"simple_grid_field4"
 							],
-							"field": "topic",
-							"columnName": "field"
+							"field": "creationUser"
 						},
-						"footcell_field1": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "topic",
-							"columnName": "field"
-						},
-						"headcell_field2": {
-							"model": "headcell_field",
+						"cell_label2": {
+							"model": "cell_label",
 							"items": [
-								"simple_grid_field5"
+								"grid_field_label"
 							],
-							"field": "creationUser",
-							"columnName": "field"
+							"field": "countReplies"
 						},
 						"cell_field2": {
 							"model": "cell_field",
 							"items": [
-								"simple_grid_field4"
+								"grid_field"
 							],
-							"field": "creationUser",
-							"columnName": "field"
+							"field": "countReplies"
 						},
-						"footcell_field2": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "creationUser",
-							"columnName": "field"
-						},
-						"headcell_icons": {
-							"model": "headcell_icons",
-							"items": [],
-							"columnName": "edit",
-							"field": ""
-						},
-						"cell_icons": {
-							"model": "cell_icons",
+						"cell_label3": {
+							"model": "cell_label",
 							"items": [
-								"grid_edit"
+								"simple_grid_field3"
 							],
-							"columnName": "edit",
-							"field": ""
-						},
-						"footcell_icons": {
-							"model": "footcell_icons",
-							"items": [],
-							"columnName": "edit",
-							"field": ""
-						},
-						"headcell_checkbox": {
-							"model": "headcell_checkbox",
-							"items": [
-								"grid_checkbox_head"
-							],
-							"columnName": "checkbox",
-							"field": ""
-						},
-						"cell_checkbox": {
-							"model": "cell_checkbox",
-							"items": [
-								"grid_checkbox"
-							],
-							"columnName": "checkbox",
-							"field": ""
-						},
-						"footcell_checkbox": {
-							"model": "footcell_checkbox",
-							"items": [],
-							"columnName": "checkbox",
-							"field": ""
-						},
-						"cell_dpreview": {
-							"model": "cell_dpreview",
-							"items": [
-								"details_preview"
-							],
-							"_t": "Map",
-							"_i": {},
-							"_s": 0,
-							"columnName": "field",
-							"field": "LastUpdateDate"
-						},
-						"headcell_field3": {
-							"model": "headcell_field",
-							"items": [
-								"grid_field_label2"
-							],
-							"field": "",
-							"columnName": ""
+							"field": "topic"
 						},
 						"cell_field3": {
 							"model": "cell_field",
 							"items": [
-								"grid_field2"
+								"simple_grid_field2"
 							],
-							"field": "",
-							"columnName": ""
+							"field": "topic"
 						},
-						"footcell_field3": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "",
-							"columnName": ""
-						},
-						"headcell_field4": {
-							"model": "headcell_field",
+						"cell_label4": {
+							"model": "cell_label",
 							"items": [
-								"grid_field_label1"
+								"grid_field_label2"
 							],
-							"field": "LastUpdateDate",
-							"columnName": "field"
+							"field": "countView"
 						},
 						"cell_field4": {
 							"model": "cell_field",
 							"items": [
-								"grid_field1"
+								"grid_field2"
 							],
-							"field": "LastUpdateDate",
-							"columnName": "field"
+							"field": "countView"
 						},
-						"footcell_field4": {
-							"model": "footcell_field",
-							"items": [],
-							"field": "LastUpdateDate",
-							"columnName": "field"
-						},
-						"headcell_field6": {
-							"model": "headcell_field",
+						"cell_label5": {
+							"model": "cell_label",
 							"items": [
-								"grid_field_label"
+								"grid_field_label1"
 							],
-							"field": "",
-							"columnName": ""
+							"field": "LastUpdateDate"
 						},
-						"cell_field6": {
+						"cell_field5": {
 							"model": "cell_field",
 							"items": [
-								"grid_field"
+								"grid_field1"
 							],
-							"field": "",
-							"columnName": ""
+							"field": "LastUpdateDate"
 						}
 					},
-					"deferredItems": [],
-					"recsPerRow": 1
+					"deferredItems": [
+						"grid_checkbox_head"
+					],
+					"recsPerRow": 3
 				}
 			},
 			"items": {
@@ -2516,45 +2424,6 @@
 				},
 				"pagination": {
 					"type": "pagination"
-				},
-				"simple_grid_field1": {
-					"field": "cateories_id",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field2": {
-					"field": "topic",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"simple_grid_field4": {
-					"field": "creationUser",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false,
-					"nowrap": false
-				},
-				"grid_edit": {
-					"type": "grid_edit",
-					"label": {
-						"text": "Edit",
-						"type": 0
-					},
-					"buttonStyle": "primary",
-					"page": "",
-					"buttonSize": "small",
-					"icon": {
-						"glyph": "pencil",
-						"style": 0
-					}
-				},
-				"grid_checkbox": {
-					"type": "grid_checkbox"
-				},
-				"grid_checkbox_head": {
-					"type": "grid_checkbox_head"
 				},
 				"search_panel_field": {
 					"field": "cateories_id",
@@ -2643,23 +2512,6 @@
 				"logo": {
 					"type": "logo"
 				},
-				"simple_grid_field": {
-					"type": "grid_field_label",
-					"field": "cateories_id"
-				},
-				"simple_grid_field3": {
-					"type": "grid_field_label",
-					"field": "topic"
-				},
-				"simple_grid_field5": {
-					"type": "grid_field_label",
-					"field": "creationUser",
-					"label": {
-						"field": "creationUser",
-						"table": "topics",
-						"type": 3
-					}
-				},
 				"filter_panel": {
 					"type": "filter_panel",
 					"items": []
@@ -2675,42 +2527,6 @@
 					"tables": {
 						"2684380970": true
 					}
-				},
-				"details_preview": {
-					"type": "details_preview",
-					"table": 2684380970,
-					"items": [],
-					"popup": false,
-					"hideEmptyPreview": false,
-					"proceedLink": false,
-					"pageId": "list"
-				},
-				"grid_field": {
-					"field": "countReplies",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field_label": {
-					"type": "grid_field_label",
-					"field": "countReplies"
-				},
-				"grid_field1": {
-					"field": "LastUpdateDate",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false,
-					"nowrap": false
-				},
-				"grid_field_label1": {
-					"type": "grid_field_label",
-					"field": "LastUpdateDate",
-					"label": {
-						"field": "LastUpdateDate",
-						"table": "topics",
-						"type": 3
-					},
-					"nowrap": false
 				},
 				"custom_button": {
 					"eventId": "Subscribe",
@@ -2741,21 +2557,6 @@
 					},
 					"eventGid": 194928651
 				},
-				"grid_field2": {
-					"field": "countView",
-					"type": "grid_field",
-					"inlineAdd": false,
-					"inlineEdit": false
-				},
-				"grid_field_label2": {
-					"type": "grid_field_label",
-					"field": "countView",
-					"label": {
-						"field": "countView",
-						"table": "topics",
-						"type": 3
-					}
-				},
 				"username_button": {
 					"type": "username_button",
 					"items": [
@@ -2776,6 +2577,113 @@
 				},
 				"adminarea_link": {
 					"type": "adminarea_link"
+				},
+				"grid_checkbox": {
+					"type": "grid_checkbox"
+				},
+				"grid_edit": {
+					"type": "grid_edit",
+					"label": {
+						"text": "Edit",
+						"type": 0
+					},
+					"buttonStyle": "primary",
+					"page": "",
+					"buttonSize": "small",
+					"icon": {
+						"glyph": "pencil",
+						"style": 0
+					}
+				},
+				"simple_grid_field": {
+					"type": "grid_field_label",
+					"field": "cateories_id"
+				},
+				"simple_grid_field1": {
+					"field": "cateories_id",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field5": {
+					"type": "grid_field_label",
+					"field": "creationUser",
+					"label": {
+						"field": "creationUser",
+						"table": "topics",
+						"type": 3
+					}
+				},
+				"simple_grid_field4": {
+					"field": "creationUser",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false,
+					"nowrap": false
+				},
+				"grid_field_label": {
+					"type": "grid_field_label",
+					"field": "countReplies"
+				},
+				"grid_field": {
+					"field": "countReplies",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"simple_grid_field3": {
+					"type": "grid_field_label",
+					"field": "topic"
+				},
+				"simple_grid_field2": {
+					"field": "topic",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field_label2": {
+					"type": "grid_field_label",
+					"field": "countView",
+					"label": {
+						"field": "countView",
+						"table": "topics",
+						"type": 3
+					}
+				},
+				"grid_field2": {
+					"field": "countView",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false
+				},
+				"grid_field_label1": {
+					"type": "grid_field_label",
+					"field": "LastUpdateDate",
+					"label": {
+						"field": "LastUpdateDate",
+						"table": "topics",
+						"type": 3
+					},
+					"nowrap": false
+				},
+				"grid_field1": {
+					"field": "LastUpdateDate",
+					"type": "grid_field",
+					"inlineAdd": false,
+					"inlineEdit": false,
+					"nowrap": false
+				},
+				"details_preview": {
+					"type": "details_preview",
+					"table": 2684380970,
+					"items": [],
+					"popup": false,
+					"hideEmptyPreview": false,
+					"proceedLink": false,
+					"pageId": "list"
+				},
+				"grid_checkbox_head": {
+					"type": "grid_checkbox_head"
 				}
 			},
 			"version": 4,

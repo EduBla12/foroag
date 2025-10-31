@@ -5,7 +5,6 @@
 	"build": 36153,
 	"appUser": "PHPRunner 10.4",
 	"name": "forum",
-	"rteType": "INNOVA",
 	"mainDiagram": {
 		"tables": [
 			{
@@ -56,6 +55,20 @@
 				"width": 120,
 				"height": 173,
 				"gid": 2375276105
+			},
+			{
+				"gid": 217514814,
+				"y": 10,
+				"x": 1055,
+				"width": 146.8125,
+				"height": 264
+			},
+			{
+				"gid": 3030998547,
+				"y": 10,
+				"x": 1230,
+				"width": 149.15625,
+				"height": 264
 			}
 		]
 	},
@@ -91,7 +104,9 @@
 		"sessionControl": {
 			"lifeTime": 15,
 			"sessionName": "zreqYZNmHNz08zqcyQ5p",
-			"JWTSecret": "QznRhy3JE84rTSt8jCuR"
+			"JWTSecret": "QznRhy3JE84rTSt8jCuR",
+			"keepAlive": true,
+			"forceExpire": false
 		},
 		"registration": {
 			"remindMethod": 0,
@@ -3514,6 +3529,29 @@
 			"code": "$userdata['userType'] = \"Default\";\n$userdata['image'] = '[{\"name\":\"files\\/usuario_in42azvr.png\",\"usrName\":\"usuario.png\",\"size\":9109,\"type\":\"image\\/png\",\"searchStr\":\"usuario.png,!:sStrEnd\"}]';\nreturn true;"
 		}
 	],
+	"projectStyle": {
+		"theme": "pjn25",
+		"size": "small",
+		"sidebarTheme": "legacy",
+		"topbarTheme": "legacy",
+		"logoTheme": "legacy",
+		"sidebarCustomThemeColor": "legacy",
+		"topbarCustomThemeColor": "legacy",
+		"logoCustomThemeColor": "legacy",
+		"gpHeaderBg": "legacy",
+		"gpHeaderColor": "legacy",
+		"gpFooterBg": "legacy",
+		"gpPanelBorder": "legacy",
+		"gpBorderColor": "legacy",
+		"gpInnerBorder": "legacy",
+		"gpInnerBorderColor": "legacy",
+		"gcOddBg": "legacy",
+		"gcOddColor": "legacy",
+		"gcEvenBg": "legacy",
+		"gcEvenColor": "legacy",
+		"gcRolloverHighlightBg": "legacy",
+		"gcRolloverHighlightColor": "legacy"
+	},
 	"settingsTable": {
 		"connId": "",
 		"table": ""
