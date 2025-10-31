@@ -1446,12 +1446,6 @@
 				"-2": {
 					"type": "-"
 				},
-				"logout_link": {
-					"type": "logout_link"
-				},
-				"changepassword_link": {
-					"type": "changepassword_link"
-				},
 				"menu": {
 					"type": "menu"
 				},
@@ -1483,17 +1477,6 @@
 				"logo": {
 					"type": "logo"
 				},
-				"username_button": {
-					"type": "username_button",
-					"items": [
-						"logout_link",
-						"changepassword_link"
-					]
-				},
-				"loginform_login": {
-					"type": "loginform_login",
-					"popup": false
-				},
 				"simple_grid_field4": {
 					"type": "grid_field_label",
 					"field": "id_log_seen",
@@ -1524,6 +1507,27 @@
 				"simple_grid_field7": {
 					"type": "grid_field_label",
 					"field": "displayDate"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,
@@ -1888,14 +1892,23 @@
 				"username_button": {
 					"type": "username_button",
 					"items": [
-						"logout_link"
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
 					]
 				},
 				"loginform_login": {
-					"type": "loginform_login"
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
 				},
 				"logout_link": {
 					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,

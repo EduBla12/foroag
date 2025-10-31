@@ -14,7 +14,7 @@
 		"50",
 		"100",
 		"500",
-		"-1"
+		"1"
 	],
 	"pageSizeSelectorGroups": [
 		"1",
@@ -23,7 +23,7 @@
 		"10",
 		"50",
 		"100",
-		"-1"
+		"1"
 	],
 	"keyFields": [
 		"id_cateories"
@@ -1253,12 +1253,6 @@
 				"hide_search_panel": {
 					"type": "hide_search_panel"
 				},
-				"logout_link": {
-					"type": "logout_link"
-				},
-				"changepassword_link": {
-					"type": "changepassword_link"
-				},
 				"menu": {
 					"type": "menu"
 				},
@@ -1302,17 +1296,27 @@
 				"username_button": {
 					"type": "username_button",
 					"items": [
+						"userinfo_link",
 						"logout_link",
-						"changepassword_link"
+						"adminarea_link"
 					]
 				},
 				"loginform_login": {
 					"type": "loginform_login",
 					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,
-			"pageWidth": "standard",
+			"pageWidth": "full",
 			"pageAlign": "left",
 			"fixedTopbar": true,
 			"imageItem": {
@@ -1855,14 +1859,23 @@
 				"username_button": {
 					"type": "username_button",
 					"items": [
-						"logout_link"
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
 					]
 				},
 				"loginform_login": {
-					"type": "loginform_login"
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
 				},
 				"logout_link": {
 					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,

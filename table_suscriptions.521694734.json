@@ -392,14 +392,23 @@
 				"username_button": {
 					"type": "username_button",
 					"items": [
-						"logout_link"
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
 					]
 				},
 				"loginform_login": {
-					"type": "loginform_login"
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
 				},
 				"logout_link": {
 					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,
@@ -642,14 +651,23 @@
 				"username_button": {
 					"type": "username_button",
 					"items": [
-						"logout_link"
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
 					]
 				},
 				"loginform_login": {
-					"type": "loginform_login"
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
 				},
 				"logout_link": {
 					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,
@@ -1260,12 +1278,6 @@
 				"import": {
 					"type": "import"
 				},
-				"logout_link": {
-					"type": "logout_link"
-				},
-				"changepassword_link": {
-					"type": "changepassword_link"
-				},
 				"menu": {
 					"type": "menu"
 				},
@@ -1305,13 +1317,23 @@
 				"username_button": {
 					"type": "username_button",
 					"items": [
+						"userinfo_link",
 						"logout_link",
-						"changepassword_link"
+						"adminarea_link"
 					]
 				},
 				"loginform_login": {
 					"type": "loginform_login",
 					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,
@@ -1663,14 +1685,23 @@
 				"username_button": {
 					"type": "username_button",
 					"items": [
-						"logout_link"
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
 					]
 				},
 				"loginform_login": {
-					"type": "loginform_login"
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
 				},
 				"logout_link": {
 					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,
@@ -1889,14 +1920,23 @@
 				"username_button": {
 					"type": "username_button",
 					"items": [
-						"logout_link"
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
 					]
 				},
 				"loginform_login": {
-					"type": "loginform_login"
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
 				},
 				"logout_link": {
 					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,

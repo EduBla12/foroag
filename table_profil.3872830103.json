@@ -807,23 +807,6 @@
 				"menu": {
 					"type": "menu"
 				},
-				"username_button": {
-					"type": "username_button",
-					"items": [
-						"logout_link",
-						"changepassword_link"
-					]
-				},
-				"loginform_login": {
-					"type": "loginform_login",
-					"popup": false
-				},
-				"logout_link": {
-					"type": "logout_link"
-				},
-				"changepassword_link": {
-					"type": "changepassword_link"
-				},
 				"edit_view": {
 					"type": "edit_view",
 					"buttonSize": "normal",
@@ -880,6 +863,27 @@
 				"integrated_edit_field11": {
 					"type": "edit_field_tooltip",
 					"field": "image"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,
@@ -1987,23 +1991,6 @@
 				"menu": {
 					"type": "menu"
 				},
-				"username_button": {
-					"type": "username_button",
-					"items": [
-						"logout_link",
-						"changepassword_link"
-					]
-				},
-				"loginform_login": {
-					"type": "loginform_login",
-					"popup": false
-				},
-				"logout_link": {
-					"type": "logout_link"
-				},
-				"changepassword_link": {
-					"type": "changepassword_link"
-				},
 				"integrated_search_field": {
 					"field": "id_user",
 					"type": "integrated_search_field",
@@ -2063,6 +2050,27 @@
 					"type": "integrated_search_field",
 					"orientation": 0,
 					"required": false
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,
@@ -2357,23 +2365,6 @@
 				"menu": {
 					"type": "menu"
 				},
-				"username_button": {
-					"type": "username_button",
-					"items": [
-						"logout_link",
-						"changepassword_link"
-					]
-				},
-				"loginform_login": {
-					"type": "loginform_login",
-					"popup": false
-				},
-				"logout_link": {
-					"type": "logout_link"
-				},
-				"changepassword_link": {
-					"type": "changepassword_link"
-				},
 				"view_edit": {
 					"type": "view_edit",
 					"buttonSize": "normal",
@@ -2418,6 +2409,27 @@
 				"integrated_edit_field9": {
 					"type": "edit_field_label",
 					"field": "image"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,

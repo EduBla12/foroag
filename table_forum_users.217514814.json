@@ -1,0 +1,252 @@
+{
+	"sql": "SELECT\r\n\tID,\r\n\tusername,\r\n\tpassword,\r\n\temail,\r\n\tfullname,\r\n\tgroupid,\r\n\tactive,\r\n\text_security_id\r\nFROM\r\n\tforum_users",
+	"connId": "forum_at_localhost",
+	"originalTable": "forum_users",
+	"name": "forum_users",
+	"shortTableName": "forum_users",
+	"dbType": 0,
+	"keyFields": [
+		"ID"
+	],
+	"detailsBadgeColor": "6b8e23",
+	"fields": [
+		{
+			"name": "ID",
+			"sqlExpression": "ID",
+			"strField": "ID",
+			"type": 3,
+			"autoinc": true,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"Spanish": "ID"
+			},
+			"tableName": "forum_users"
+		},
+		{
+			"name": "username",
+			"sqlExpression": "username",
+			"strField": "username",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"Spanish": "Username"
+			},
+			"tableName": "forum_users"
+		},
+		{
+			"name": "password",
+			"sqlExpression": "password",
+			"strField": "password",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"Spanish": "Password"
+			},
+			"tableName": "forum_users"
+		},
+		{
+			"name": "email",
+			"sqlExpression": "email",
+			"strField": "email",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"Spanish": "Email"
+			},
+			"tableName": "forum_users"
+		},
+		{
+			"name": "fullname",
+			"sqlExpression": "fullname",
+			"strField": "fullname",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"Spanish": "Fullname"
+			},
+			"tableName": "forum_users"
+		},
+		{
+			"name": "groupid",
+			"sqlExpression": "groupid",
+			"strField": "groupid",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"Spanish": "Groupid"
+			},
+			"tableName": "forum_users"
+		},
+		{
+			"name": "active",
+			"sqlExpression": "active",
+			"strField": "active",
+			"type": 3,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"Spanish": "Active"
+			},
+			"tableName": "forum_users"
+		},
+		{
+			"name": "ext_security_id",
+			"sqlExpression": "ext_security_id",
+			"strField": "ext_security_id",
+			"type": 200,
+			"viewFormats": [
+				{}
+			],
+			"editFormats": [
+				{}
+			],
+			"label": {
+				"Spanish": "Ext Security Id"
+			},
+			"tableName": "forum_users"
+		}
+	],
+	"dbTableInfo": {
+		"type": 0,
+		"foreignKeys": [],
+		"fields": [
+			{
+				"name": "ID",
+				"type": 3,
+				"size": 11,
+				"scale": 0,
+				"typeName": "int(11)",
+				"nullable": false,
+				"autoinc": true,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "username",
+				"type": 200,
+				"size": 255,
+				"scale": 0,
+				"typeName": "varchar(255)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "password",
+				"type": 200,
+				"size": 255,
+				"scale": 0,
+				"typeName": "varchar(255)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "email",
+				"type": 200,
+				"size": 255,
+				"scale": 0,
+				"typeName": "varchar(255)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "fullname",
+				"type": 200,
+				"size": 255,
+				"scale": 0,
+				"typeName": "varchar(255)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "groupid",
+				"type": 200,
+				"size": 255,
+				"scale": 0,
+				"typeName": "varchar(255)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "active",
+				"type": 3,
+				"size": 11,
+				"scale": 0,
+				"typeName": "int(11)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			},
+			{
+				"name": "ext_security_id",
+				"type": 200,
+				"size": 100,
+				"scale": 0,
+				"typeName": "varchar(100)",
+				"nullable": true,
+				"autoinc": false,
+				"defaultValueSQL": null,
+				"defaultValue": ""
+			}
+		],
+		"primaryKeys": [
+			"ID"
+		],
+		"uniqueFields": [],
+		"name": "forum_users"
+	},
+	"pages": [],
+	"geoCoding": {
+		"enabled": false,
+		"latField": "",
+		"lonField": "",
+		"addressFields": []
+	},
+	"caption": {
+		"Spanish": "Forum Users"
+	}
+}

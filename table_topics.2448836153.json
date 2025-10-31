@@ -1295,18 +1295,6 @@
 				"menu": {
 					"type": "menu"
 				},
-				"username_button": {
-					"type": "username_button",
-					"items": [
-						"logout_link"
-					]
-				},
-				"loginform_login": {
-					"type": "loginform_login"
-				},
-				"logout_link": {
-					"type": "logout_link"
-				},
 				"integrated_edit_field5": {
 					"type": "edit_field_label",
 					"field": "cateories_id"
@@ -1330,6 +1318,27 @@
 				"integrated_edit_field10": {
 					"type": "edit_field_tooltip",
 					"field": "question"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,
@@ -1661,18 +1670,6 @@
 				"menu": {
 					"type": "menu"
 				},
-				"username_button": {
-					"type": "username_button",
-					"items": [
-						"logout_link"
-					]
-				},
-				"loginform_login": {
-					"type": "loginform_login"
-				},
-				"logout_link": {
-					"type": "logout_link"
-				},
 				"integrated_edit_field3": {
 					"type": "edit_field_label",
 					"field": "cateories_id"
@@ -1696,6 +1693,27 @@
 				"integrated_edit_field9": {
 					"type": "edit_field_tooltip",
 					"field": "question"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,
@@ -2526,7 +2544,11 @@
 					},
 					"buttonStyle": "primary",
 					"page": "",
-					"buttonSize": "small"
+					"buttonSize": "small",
+					"icon": {
+						"glyph": "pencil",
+						"style": 0
+					}
 				},
 				"grid_checkbox": {
 					"type": "grid_checkbox"
@@ -2579,12 +2601,6 @@
 				"hide_search_panel": {
 					"type": "hide_search_panel"
 				},
-				"logout_link": {
-					"type": "logout_link"
-				},
-				"changepassword_link": {
-					"type": "changepassword_link"
-				},
 				"menu": {
 					"type": "menu"
 				},
@@ -2626,17 +2642,6 @@
 				},
 				"logo": {
 					"type": "logo"
-				},
-				"username_button": {
-					"type": "username_button",
-					"items": [
-						"logout_link",
-						"changepassword_link"
-					]
-				},
-				"loginform_login": {
-					"type": "loginform_login",
-					"popup": false
 				},
 				"simple_grid_field": {
 					"type": "grid_field_label",
@@ -2717,7 +2722,8 @@
 					"buttonSize": "normal",
 					"buttonStyle": "success",
 					"icon": {
-						"glyph": "heart"
+						"glyph": "heart",
+						"style": 0
 					},
 					"eventGid": 3930643869
 				},
@@ -2749,6 +2755,27 @@
 						"table": "topics",
 						"type": 3
 					}
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,
@@ -3923,18 +3950,6 @@
 				"menu": {
 					"type": "menu"
 				},
-				"username_button": {
-					"type": "username_button",
-					"items": [
-						"logout_link"
-					]
-				},
-				"loginform_login": {
-					"type": "loginform_login"
-				},
-				"logout_link": {
-					"type": "logout_link"
-				},
 				"integrated_search_field13": {
 					"type": "search_field_label",
 					"field": "id_topics"
@@ -4062,6 +4077,27 @@
 				"search_field_between3": {
 					"type": "search_field_between",
 					"field": "countView"
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,
@@ -4404,18 +4440,6 @@
 				"menu": {
 					"type": "menu"
 				},
-				"username_button": {
-					"type": "username_button",
-					"items": [
-						"logout_link"
-					]
-				},
-				"loginform_login": {
-					"type": "loginform_login"
-				},
-				"logout_link": {
-					"type": "logout_link"
-				},
 				"integrated_edit_field6": {
 					"type": "edit_field_label",
 					"field": "id_topics"
@@ -4441,6 +4465,27 @@
 					"table": 2684380970,
 					"items": [],
 					"popup": false
+				},
+				"username_button": {
+					"type": "username_button",
+					"items": [
+						"userinfo_link",
+						"logout_link",
+						"adminarea_link"
+					]
+				},
+				"loginform_login": {
+					"type": "loginform_login",
+					"popup": false
+				},
+				"userinfo_link": {
+					"type": "userinfo_link"
+				},
+				"logout_link": {
+					"type": "logout_link"
+				},
+				"adminarea_link": {
+					"type": "adminarea_link"
 				}
 			},
 			"version": 4,
