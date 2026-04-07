@@ -1,18 +1,32 @@
 {
 	"app": "PHPRunner",
-	"programVersion": 2,
-	"versionName": "11.1",
+	"programVersion": 3,
+	"versionName": "11.2",
 	"build": 36153,
 	"appUser": "PHPRunner 10.4",
 	"name": "forum",
 	"mainDiagram": {
 		"tables": [
 			{
+				"gid": 3030998547,
+				"y": 10,
+				"x": 1230,
+				"width": 149.15625,
+				"height": 264
+			},
+			{
 				"x": 69,
 				"y": 22,
 				"width": 120,
 				"height": 97,
 				"gid": 2473370747
+			},
+			{
+				"gid": 217514814,
+				"y": 10,
+				"x": 1055,
+				"width": 146.8125,
+				"height": 264
 			},
 			{
 				"x": 910,
@@ -55,20 +69,6 @@
 				"width": 120,
 				"height": 173,
 				"gid": 2375276105
-			},
-			{
-				"gid": 217514814,
-				"y": 10,
-				"x": 1055,
-				"width": 146.8125,
-				"height": 264
-			},
-			{
-				"gid": 3030998547,
-				"y": 10,
-				"x": 1230,
-				"width": 149.15625,
-				"height": 264
 			}
 		]
 	},
@@ -133,7 +133,13 @@
 			"SMTPPort": 25,
 			"SMTPUser": "",
 			"SMTPPassword": "",
-			"securityProtocol": 0
+			"securityProtocol": 0,
+			"provider": 0,
+			"oauthUserEmail": "",
+			"oauthSettingsJson": "",
+			"oauthClientId": "",
+			"oauthClientSecret": "",
+			"oauthTenantId": ""
 		},
 		"advancedSecurity": {
 			"allowGuestLogin": false
@@ -774,7 +780,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "changepwd_success",
@@ -905,7 +912,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "login",
@@ -1209,7 +1217,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "menu",
@@ -1443,7 +1452,9 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {},
+			"welcomeStyle": 0
 		},
 		{
 			"id": "register",
@@ -1820,7 +1831,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "left",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "register_success",
@@ -1972,7 +1984,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "remind",
@@ -2161,7 +2174,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "remind_success",
@@ -2292,7 +2306,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "userinfo",
@@ -2554,7 +2569,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "admin_rights_list",
@@ -3170,7 +3186,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "admin_members_list",
@@ -3505,7 +3522,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		}
 	],
 	"eventHandlers": [

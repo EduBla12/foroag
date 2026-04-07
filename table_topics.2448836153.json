@@ -1351,7 +1351,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "edit",
@@ -1726,7 +1727,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "export",
@@ -1898,6 +1900,7 @@
 			"imagePosition": "right",
 			"listTotals": 1,
 			"title": {},
+			"cardStyle": {},
 			"exportFormat": 2,
 			"exportDelimiter": ",",
 			"exportSelectDelimiter": false,
@@ -2029,7 +2032,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "list",
@@ -2698,7 +2702,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "masterlist",
@@ -3003,7 +3008,8 @@
 			"listTotals": 1,
 			"title": {
 				"English": "{%topic}"
-			}
+			},
+			"cardStyle": {}
 		},
 		{
 			"id": "masterprint",
@@ -3092,7 +3098,8 @@
 			"listTotals": 1,
 			"title": {
 				"English": "{%topic}"
-			}
+			},
+			"cardStyle": {}
 		},
 		{
 			"id": "print",
@@ -3274,7 +3281,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "search",
@@ -4018,7 +4026,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		},
 		{
 			"id": "view",
@@ -4406,7 +4415,8 @@
 			"controlsBgColor": "white",
 			"imagePosition": "right",
 			"listTotals": 1,
-			"title": {}
+			"title": {},
+			"cardStyle": {}
 		}
 	],
 	"geoCoding": {
